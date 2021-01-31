@@ -4,8 +4,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="PagedList.Core" Version="1.17.4" />
-  </ItemGroup>
-
 </Project>

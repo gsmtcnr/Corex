@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Corex.Model.Infrastructure\Corex.Model.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corex.ExceptionHandling.Infrastructure\Corex.ExceptionHandling.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

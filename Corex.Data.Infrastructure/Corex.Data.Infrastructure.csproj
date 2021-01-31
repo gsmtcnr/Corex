@@ -8,4 +8,8 @@
     <PackageReference Include="PagedList.Core" Version="1.17.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.Model.Derived.EntityModel\Corex.Model.Derived.EntityModel.csproj" />
+  </ItemGroup>
+
 </Project>

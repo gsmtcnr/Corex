@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PagedList.Core" Version="1.17.4" />
+    <ProjectReference Include="..\Corex.ExceptionHandling.Infrastructure\Corex.ExceptionHandling.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

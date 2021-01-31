@@ -1,4 +1,4 @@
-﻿namespace Corex.Model.Derived.PageModel
+﻿namespace Corex.Model.Infrastructure
 {
     public interface ISelectListItem
     {
