@@ -32,7 +32,6 @@ namespace Corex.ExceptionHandling.Manager
                     AddMesage((IResultMessage)item);
                 }
             }
-            return resultMessages;
         }
         #region Private Methods
         private ExceptionMessageModel GetUFMessage(Exception exception)
