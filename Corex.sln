@@ -27,19 +27,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Utility.Infrastructur
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15.ExceptionHandling", "15.ExceptionHandling", "{ADABBFF7-BE2B-4760-8FE0-7600EE909D25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExceptionHandling.Infrastructure", "Corex.ExceptionHandling.Infrastructure\Corex.ExceptionHandling.Infrastructure.csproj", "{D3AB7E9C-DA25-4BC9-859E-FBA7FCB832F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Infrastructure", "Corex.ExceptionHandling.Infrastructure\Corex.ExceptionHandling.Infrastructure.csproj", "{D3AB7E9C-DA25-4BC9-859E-FBA7FCB832F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExceptionHandling.Derived", "ExceptionHandling.Derived", "{D8C1C022-79C3-43E2-8A06-AF9F3EFEBEE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExceptionHandling.Derived.Authentication", "Corex.ExceptionHandling.Derived.Authentication\Corex.ExceptionHandling.Derived.Authentication.csproj", "{1771670D-1B52-45D8-B132-B97134A04A85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Derived.Authentication", "Corex.ExceptionHandling.Derived.Authentication\Corex.ExceptionHandling.Derived.Authentication.csproj", "{1771670D-1B52-45D8-B132-B97134A04A85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExceptionHandling.Derived.Business", "Corex.ExceptionHandling.Derived.Business\Corex.ExceptionHandling.Derived.Business.csproj", "{323A9AC1-9B44-4852-9EF7-57120D5EAF18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Derived.Business", "Corex.ExceptionHandling.Derived.Business\Corex.ExceptionHandling.Derived.Business.csproj", "{323A9AC1-9B44-4852-9EF7-57120D5EAF18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExceptionHandling.Derived.Data", "Corex.ExceptionHandling.Derived.Data\Corex.ExceptionHandling.Derived.Data.csproj", "{0F0F997E-0480-49F0-B545-6FC3FCE850F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Derived.Data", "Corex.ExceptionHandling.Derived.Data\Corex.ExceptionHandling.Derived.Data.csproj", "{0F0F997E-0480-49F0-B545-6FC3FCE850F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExceptionHandling.Derived.Validation", "Corex.ExceptionHandling.Derived.Validation\Corex.ExceptionHandling.Derived.Validation.csproj", "{016FB7F4-1C38-4084-B3E1-449073540174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Derived.Validation", "Corex.ExceptionHandling.Derived.Validation\Corex.ExceptionHandling.Derived.Validation.csproj", "{016FB7F4-1C38-4084-B3E1-449073540174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExceptionHandling.Manager", "Corex.ExceptionHandling.Manager\Corex.ExceptionHandling.Manager.csproj", "{9264C763-1A0F-4CD4-BF98-791B780BFC5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Manager", "Corex.ExceptionHandling.Manager\Corex.ExceptionHandling.Manager.csproj", "{9264C763-1A0F-4CD4-BF98-791B780BFC5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20.Validation", "20.Validation", "{40C1549F-EAFE-4931-8019-036CB7731CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Validation.Infrastructure", "Corex.Validation.Infrastructure\Corex.Validation.Infrastructure.csproj", "{1E7950E3-F695-4988-89C0-9C3677ED316E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +99,10 @@ Global
 		{9264C763-1A0F-4CD4-BF98-791B780BFC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9264C763-1A0F-4CD4-BF98-791B780BFC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9264C763-1A0F-4CD4-BF98-791B780BFC5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,7 @@ Global
 		{0F0F997E-0480-49F0-B545-6FC3FCE850F3} = {D8C1C022-79C3-43E2-8A06-AF9F3EFEBEE7}
 		{016FB7F4-1C38-4084-B3E1-449073540174} = {D8C1C022-79C3-43E2-8A06-AF9F3EFEBEE7}
 		{9264C763-1A0F-4CD4-BF98-791B780BFC5C} = {ADABBFF7-BE2B-4760-8FE0-7600EE909D25}
+		{1E7950E3-F695-4988-89C0-9C3677ED316E} = {40C1549F-EAFE-4931-8019-036CB7731CBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
