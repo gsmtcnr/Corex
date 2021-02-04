@@ -23,7 +23,6 @@ namespace Corex.ExceptionHandling.Manager
         }
         public void SetMessages()
         {
-            IList<IResultMessage> resultMessages = new List<IResultMessage>();
             ExceptionMessageModel messageModel = GetUFMessage(_ex);
             if (messageModel.Messages.Any())
             {

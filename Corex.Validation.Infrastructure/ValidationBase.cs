@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Core.Validation.Infrastucture
+namespace Corex.Validation.Infrastucture
 {
     public abstract class ValidationBase<T> where T : class
     {

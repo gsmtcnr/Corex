@@ -1,4 +1,4 @@
-﻿namespace Core.Validation.Infrastucture
+﻿namespace Corex.Validation.Infrastucture
 {
     public class ValidationMessage 
     {

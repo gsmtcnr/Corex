@@ -43,7 +43,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExceptionHandling.Man
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20.Validation", "20.Validation", "{40C1549F-EAFE-4931-8019-036CB7731CBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Validation.Infrastructure", "Corex.Validation.Infrastructure\Corex.Validation.Infrastructure.csproj", "{1E7950E3-F695-4988-89C0-9C3677ED316E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Validation.Infrastructure", "Corex.Validation.Infrastructure\Corex.Validation.Infrastructure.csproj", "{1E7950E3-F695-4988-89C0-9C3677ED316E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "25.Log", "25.Log", "{8ADACA42-08E2-489F-8B8E-EA23B305895F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Log.Infrastructure", "Corex.Log.Infrastructure\Corex.Log.Infrastructure.csproj", "{BCB375BB-2AF7-4B84-9245-BC68D4B3FD9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Log.Derived", "Log.Derived", "{16323704-AFCB-416F-8BBC-37D541326D55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Log.Derived.MSSQL", "Corex.Log.Derived.MSSQL\Corex.Log.Derived.MSSQL.csproj", "{4298702A-6CBA-465F-86A9-CC6D357BC797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Log.Derived.AzureTableStorage", "Corex.Log.Derived.AzureTableStorage\Corex.Log.Derived.AzureTableStorage.csproj", "{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +113,18 @@ Global
 		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E7950E3-F695-4988-89C0-9C3677ED316E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB375BB-2AF7-4B84-9245-BC68D4B3FD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB375BB-2AF7-4B84-9245-BC68D4B3FD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB375BB-2AF7-4B84-9245-BC68D4B3FD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB375BB-2AF7-4B84-9245-BC68D4B3FD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4298702A-6CBA-465F-86A9-CC6D357BC797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4298702A-6CBA-465F-86A9-CC6D357BC797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4298702A-6CBA-465F-86A9-CC6D357BC797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4298702A-6CBA-465F-86A9-CC6D357BC797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +146,10 @@ Global
 		{016FB7F4-1C38-4084-B3E1-449073540174} = {D8C1C022-79C3-43E2-8A06-AF9F3EFEBEE7}
 		{9264C763-1A0F-4CD4-BF98-791B780BFC5C} = {ADABBFF7-BE2B-4760-8FE0-7600EE909D25}
 		{1E7950E3-F695-4988-89C0-9C3677ED316E} = {40C1549F-EAFE-4931-8019-036CB7731CBB}
+		{BCB375BB-2AF7-4B84-9245-BC68D4B3FD9F} = {8ADACA42-08E2-489F-8B8E-EA23B305895F}
+		{16323704-AFCB-416F-8BBC-37D541326D55} = {8ADACA42-08E2-489F-8B8E-EA23B305895F}
+		{4298702A-6CBA-465F-86A9-CC6D357BC797} = {16323704-AFCB-416F-8BBC-37D541326D55}
+		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758} = {16323704-AFCB-416F-8BBC-37D541326D55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
