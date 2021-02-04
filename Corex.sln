@@ -55,6 +55,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Log.Derived.MSSQL", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Log.Derived.AzureTableStorage", "Corex.Log.Derived.AzureTableStorage\Corex.Log.Derived.AzureTableStorage.csproj", "{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30.Mapper", "30.Mapper", "{C96EE798-C58F-452E-9255-B3020033C31E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Mapper.Infrastructure", "Corex.Mapper.Infrastructure\Corex.Mapper.Infrastructure.csproj", "{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mapper.Derived", "Mapper.Derived", "{34845BBD-B390-40C4-A070-33202183F247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Mapper.Derived.Mapsterx", "Corex.Mapper.Derived.Mapsterx\Corex.Mapper.Derived.Mapsterx.csproj", "{8BA71354-6916-4A73-9098-8829C5C932BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +133,14 @@ Global
 		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BA71354-6916-4A73-9098-8829C5C932BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA71354-6916-4A73-9098-8829C5C932BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA71354-6916-4A73-9098-8829C5C932BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA71354-6916-4A73-9098-8829C5C932BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +166,9 @@ Global
 		{16323704-AFCB-416F-8BBC-37D541326D55} = {8ADACA42-08E2-489F-8B8E-EA23B305895F}
 		{4298702A-6CBA-465F-86A9-CC6D357BC797} = {16323704-AFCB-416F-8BBC-37D541326D55}
 		{68DAE9AF-2D37-42C5-B65F-6D6EF123A758} = {16323704-AFCB-416F-8BBC-37D541326D55}
+		{AC94960E-34B9-4EBF-A785-FE0DCC782EB1} = {C96EE798-C58F-452E-9255-B3020033C31E}
+		{34845BBD-B390-40C4-A070-33202183F247} = {C96EE798-C58F-452E-9255-B3020033C31E}
+		{8BA71354-6916-4A73-9098-8829C5C932BD} = {34845BBD-B390-40C4-A070-33202183F247}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
