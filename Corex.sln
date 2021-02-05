@@ -57,11 +57,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Log.Derived.AzureTabl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30.Mapper", "30.Mapper", "{C96EE798-C58F-452E-9255-B3020033C31E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Mapper.Infrastructure", "Corex.Mapper.Infrastructure\Corex.Mapper.Infrastructure.csproj", "{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Mapper.Infrastructure", "Corex.Mapper.Infrastructure\Corex.Mapper.Infrastructure.csproj", "{AC94960E-34B9-4EBF-A785-FE0DCC782EB1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mapper.Derived", "Mapper.Derived", "{34845BBD-B390-40C4-A070-33202183F247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Mapper.Derived.Mapsterx", "Corex.Mapper.Derived.Mapsterx\Corex.Mapper.Derived.Mapsterx.csproj", "{8BA71354-6916-4A73-9098-8829C5C932BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Mapper.Derived.Mapsterx", "Corex.Mapper.Derived.Mapsterx\Corex.Mapper.Derived.Mapsterx.csproj", "{8BA71354-6916-4A73-9098-8829C5C932BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35.Serializer", "35.Serializer", "{B3EA4B0E-9E74-4BBC-9B08-E0970B7F3478}"
 EndProject
@@ -92,6 +92,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35.1.JsonSerializer", "35.1.JsonSerializer", "{DF4E4EEC-07DD-4264-A184-4B15C5F8E70B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35.2.LinqSerializer", "35.2.LinqSerializer", "{131203E1-E076-4804-9CAF-37A9C6EF3450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.TemplateRender.Infrastructure", "Corex.TemplateRender.Infrastructure\Corex.TemplateRender.Infrastructure.csproj", "{CF26012C-619A-4737-9910-FB03239528BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateRender.Derived", "TemplateRender.Derived", "{DF708890-8B47-418E-8E75-44689487C25B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.TemplateRender.Derived.HBars", "Corex.TemplateRender.Derived.HBars\Corex.TemplateRender.Derived.HBars.csproj", "{24EFB6E8-BEC6-4960-93B0-941A80D7965F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +177,14 @@ Global
 		{8BA71354-6916-4A73-9098-8829C5C932BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BA71354-6916-4A73-9098-8829C5C932BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BA71354-6916-4A73-9098-8829C5C932BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF26012C-619A-4737-9910-FB03239528BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF26012C-619A-4737-9910-FB03239528BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF26012C-619A-4737-9910-FB03239528BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF26012C-619A-4737-9910-FB03239528BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -201,6 +215,9 @@ Global
 		{8BA71354-6916-4A73-9098-8829C5C932BD} = {34845BBD-B390-40C4-A070-33202183F247}
 		{DF4E4EEC-07DD-4264-A184-4B15C5F8E70B} = {B3EA4B0E-9E74-4BBC-9B08-E0970B7F3478}
 		{131203E1-E076-4804-9CAF-37A9C6EF3450} = {B3EA4B0E-9E74-4BBC-9B08-E0970B7F3478}
+		{CF26012C-619A-4737-9910-FB03239528BA} = {98355832-8188-446A-89CD-05B4F675082D}
+		{DF708890-8B47-418E-8E75-44689487C25B} = {98355832-8188-446A-89CD-05B4F675082D}
+		{24EFB6E8-BEC6-4960-93B0-941A80D7965F} = {DF708890-8B47-418E-8E75-44689487C25B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
