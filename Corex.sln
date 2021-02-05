@@ -99,6 +99,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateRender.Derived", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.TemplateRender.Derived.HBars", "Corex.TemplateRender.Derived.HBars\Corex.TemplateRender.Derived.HBars.csproj", "{24EFB6E8-BEC6-4960-93B0-941A80D7965F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.JsonSerializer.Infrastructure", "Corex.JsonSerializer.Infrastructure\Corex.JsonSerializer.Infrastructure.csproj", "{15547318-B5B5-406F-AE5D-35C3A0ECD117}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonSerializer.Derived", "JsonSerializer.Derived", "{A2452596-7C93-4A58-91D9-616E9DD20608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.JsonSerializer.Derived.NSoft", "Corex.JsonSerializer.Derived.NSoft\Corex.JsonSerializer.Derived.NSoft.csproj", "{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +191,14 @@ Global
 		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24EFB6E8-BEC6-4960-93B0-941A80D7965F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15547318-B5B5-406F-AE5D-35C3A0ECD117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15547318-B5B5-406F-AE5D-35C3A0ECD117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15547318-B5B5-406F-AE5D-35C3A0ECD117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15547318-B5B5-406F-AE5D-35C3A0ECD117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,6 +232,9 @@ Global
 		{CF26012C-619A-4737-9910-FB03239528BA} = {98355832-8188-446A-89CD-05B4F675082D}
 		{DF708890-8B47-418E-8E75-44689487C25B} = {98355832-8188-446A-89CD-05B4F675082D}
 		{24EFB6E8-BEC6-4960-93B0-941A80D7965F} = {DF708890-8B47-418E-8E75-44689487C25B}
+		{15547318-B5B5-406F-AE5D-35C3A0ECD117} = {DF4E4EEC-07DD-4264-A184-4B15C5F8E70B}
+		{A2452596-7C93-4A58-91D9-616E9DD20608} = {DF4E4EEC-07DD-4264-A184-4B15C5F8E70B}
+		{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45} = {A2452596-7C93-4A58-91D9-616E9DD20608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
