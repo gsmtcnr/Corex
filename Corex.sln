@@ -139,21 +139,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.CloudFile.Infrastruct
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFile.Derived", "CloudFile.Derived", "{2EF07D9F-9A24-4BC3-9F24-13C8919B11FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CloudFile.Derived.AzureBlobStorage", "Corex.CloudFile.Derived.AzureBlobStorage\Corex.CloudFile.Derived.AzureBlobStorage.csproj", "{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.CloudFile.Derived.AzureBlobStorage", "Corex.CloudFile.Derived.AzureBlobStorage\Corex.CloudFile.Derived.AzureBlobStorage.csproj", "{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDFConverter.Derived", "PDFConverter.Derived", "{5EDB016B-A870-451D-8DB9-F6EFC2268885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PDFConverter.Derived.SelectPDFConverter", "Corex.PDFConverter.Derived.SelectPDFConverter\Corex.PDFConverter.Derived.SelectPDFConverter.csproj", "{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.PDFConverter.Derived.SelectPDFConverter", "Corex.PDFConverter.Derived.SelectPDFConverter\Corex.PDFConverter.Derived.SelectPDFConverter.csproj", "{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PDFConverter.Derived.DinkToPDFConverter", "Corex.PDFConverter.Derived.DinkToPDFConverter\Corex.PDFConverter.Derived.DinkToPDFConverter.csproj", "{07FE5C25-06E6-401E-BE58-443D3DB3F660}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.PDFConverter.Derived.DinkToPDFConverter", "Corex.PDFConverter.Derived.DinkToPDFConverter\Corex.PDFConverter.Derived.DinkToPDFConverter.csproj", "{07FE5C25-06E6-401E-BE58-443D3DB3F660}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "70.1.CipherEncryption", "70.1.CipherEncryption", "{983A770A-391F-403C-8E44-73BEA419F912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CipherEncryption.Infrastructure", "Corex.CipherEncryption.Infrastructure\Corex.CipherEncryption.Infrastructure.csproj", "{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.CipherEncryption.Infrastructure", "Corex.CipherEncryption.Infrastructure\Corex.CipherEncryption.Infrastructure.csproj", "{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CipherEncryption.Derived", "CipherEncryption.Derived", "{6A2BA44E-5306-44CB-8DCA-77A2AD4DB273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CipherEncryption.Derived.SHA256", "Corex.CipherEncryption.Derived.SHA256\Corex.CipherEncryption.Derived.SHA256.csproj", "{9FA255FE-50F3-4C26-8A27-7AE3D431526E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.CipherEncryption.Derived.SHA256", "Corex.CipherEncryption.Derived.SHA256\Corex.CipherEncryption.Derived.SHA256.csproj", "{9FA255FE-50F3-4C26-8A27-7AE3D431526E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache.Derived", "Cache.Derived", "{F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Cache.Infrastructure", "Corex.Cache.Infrastructure\Corex.Cache.Infrastructure.csproj", "{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Cache.Derived.Memory", "Corex.Cache.Derived.Memory\Corex.Cache.Derived.Memory.csproj", "{35C05296-6C6D-47F2-9F86-D72AF0F3292A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Cache.Derived.Redis", "Corex.Cache.Derived.Redis\Corex.Cache.Derived.Redis.csproj", "{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -317,6 +325,18 @@ Global
 		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C05296-6C6D-47F2-9F86-D72AF0F3292A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C05296-6C6D-47F2-9F86-D72AF0F3292A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C05296-6C6D-47F2-9F86-D72AF0F3292A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C05296-6C6D-47F2-9F86-D72AF0F3292A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -378,6 +398,10 @@ Global
 		{8C7AD336-ED28-45F8-949D-0AC9284BEFD0} = {983A770A-391F-403C-8E44-73BEA419F912}
 		{6A2BA44E-5306-44CB-8DCA-77A2AD4DB273} = {983A770A-391F-403C-8E44-73BEA419F912}
 		{9FA255FE-50F3-4C26-8A27-7AE3D431526E} = {6A2BA44E-5306-44CB-8DCA-77A2AD4DB273}
+		{F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907} = {1F5CAA66-7B3B-46AC-BBE1-9452CF1B0FD5}
+		{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E} = {1F5CAA66-7B3B-46AC-BBE1-9452CF1B0FD5}
+		{35C05296-6C6D-47F2-9F86-D72AF0F3292A} = {F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907}
+		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1} = {F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
