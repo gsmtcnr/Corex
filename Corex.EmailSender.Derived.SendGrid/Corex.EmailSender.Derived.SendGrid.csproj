@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Description>SendGrid son versiyonu ile geliştirildi.
+SendGrid "Sender Authentication" ayarlarınızı yapmayı unutmayın.
+"Sender Authentication" içerisinde bulunan fromMail bilgisi girilmediği sürece "Forbidden" hatası alırsınız.</Description>
+    <Authors>Samet ÇINAR</Authors>
+    <Product>Corex</Product>
   </PropertyGroup>
 
   <ItemGroup>
