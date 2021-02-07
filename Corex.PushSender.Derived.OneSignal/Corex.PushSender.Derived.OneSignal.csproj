@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OneSignal.RestAPIv3.Client" Version="1.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.PushSender.Infrastructure\Corex.PushSender.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corex.Utility.Infrastructure\Corex.Utility.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
