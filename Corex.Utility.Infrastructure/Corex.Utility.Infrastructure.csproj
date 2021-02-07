@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Samet ÇINAR</Authors>
+    <Company>SÇ</Company>
+    <Product>Corex</Product>
   </PropertyGroup>
-
 </Project>

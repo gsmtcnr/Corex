@@ -4,7 +4,7 @@ using System;
 
 namespace Corex.JsonSerializer.Derived.NSoft
 {
-    public class BaseNewtonsoftSerializer : IJsonSerializer
+    public abstract class BaseNewtonsoftSerializer : IJsonSerializer
     {
         public T DeSerializeObject<T>(string data)
         {

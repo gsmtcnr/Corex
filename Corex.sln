@@ -117,6 +117,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PushSender.Derived", "PushS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PushSender.Derived.OneSignal", "Corex.PushSender.Derived.OneSignal\Corex.PushSender.Derived.OneSignal.csproj", "{30BFD633-4C72-4B13-8B35-45768B46FC16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.JsonSerializer.Derived.SJson", "Corex.JsonSerializer.Derived.SJson\Corex.JsonSerializer.Derived.SJson.csproj", "{68B0A602-3B69-4269-A314-02A8D753C490}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +229,10 @@ Global
 		{30BFD633-4C72-4B13-8B35-45768B46FC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30BFD633-4C72-4B13-8B35-45768B46FC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30BFD633-4C72-4B13-8B35-45768B46FC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B0A602-3B69-4269-A314-02A8D753C490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B0A602-3B69-4269-A314-02A8D753C490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B0A602-3B69-4269-A314-02A8D753C490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B0A602-3B69-4269-A314-02A8D753C490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -269,6 +275,7 @@ Global
 		{CAD53C5C-DCB1-455E-B653-DBDFC8371230} = {9CED7169-4F12-442F-B8B2-95CED7B76FCD}
 		{02DF6B92-3A53-464F-B09C-2C401C723552} = {9CED7169-4F12-442F-B8B2-95CED7B76FCD}
 		{30BFD633-4C72-4B13-8B35-45768B46FC16} = {02DF6B92-3A53-464F-B09C-2C401C723552}
+		{68B0A602-3B69-4269-A314-02A8D753C490} = {A2452596-7C93-4A58-91D9-616E9DD20608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
