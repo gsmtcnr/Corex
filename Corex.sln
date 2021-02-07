@@ -73,21 +73,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50.SmsSender", "50.SmsSende
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "55.EmailSender", "55.EmailSender", "{1A3F11D4-CAF6-487B-A01A-5A73C2B4C01D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60.PDFConverter", "60.PDFConverter", "{6AB03205-50E4-4878-BEDD-3387D007D04E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "65.PDFConverter", "65.PDFConverter", "{6AB03205-50E4-4878-BEDD-3387D007D04E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "90.Encryption", "90.Encryption", "{9295AF8A-CCE3-4033-9355-EDA3E80D2CF6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "70.Encryption", "70.Encryption", "{9295AF8A-CCE3-4033-9355-EDA3E80D2CF6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "95.CloudFile", "95.CloudFile", "{EC7C1BAB-BE22-4854-BDD9-C097057E4348}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60.CloudFile", "60.CloudFile", "{EC7C1BAB-BE22-4854-BDD9-C097057E4348}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "65.Cache", "65.Cache", "{1F5CAA66-7B3B-46AC-BBE1-9452CF1B0FD5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "75.Cache", "75.Cache", "{1F5CAA66-7B3B-46AC-BBE1-9452CF1B0FD5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "70.DocumentDB", "70.DocumentDB", "{8D802930-CB58-445D-97E6-187BC51B833E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "80.DocumentDB", "80.DocumentDB", "{8D802930-CB58-445D-97E6-187BC51B833E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "75.Operation", "75.Operation", "{E66D2E4F-DADE-4C6C-A267-A1873E7D52CF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "95.Operation", "95.Operation", "{E66D2E4F-DADE-4C6C-A267-A1873E7D52CF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "80.Queue", "80.Queue", "{56415402-0A81-4E25-B6FA-52F5871C596C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "85.Queue", "85.Queue", "{56415402-0A81-4E25-B6FA-52F5871C596C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "85.Presentation", "85.Presentation", "{0634CB3B-AAC2-494D-96A4-4D170DC08FE6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99.Presentation", "99.Presentation", "{0634CB3B-AAC2-494D-96A4-4D170DC08FE6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35.1.JsonSerializer", "35.1.JsonSerializer", "{DF4E4EEC-07DD-4264-A184-4B15C5F8E70B}"
 EndProject
@@ -105,33 +105,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonSerializer.Derived", "J
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.JsonSerializer.Derived.NSoft", "Corex.JsonSerializer.Derived.NSoft\Corex.JsonSerializer.Derived.NSoft.csproj", "{DEE7A8A3-993E-42E2-BD9C-DCA7BC392D45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExpressionSerializer.Infrastructure", "Corex.ExpressionSerializer.Infrastructure\Corex.ExpressionSerializer.Infrastructure.csproj", "{590ED830-7953-4B7D-A5E4-99AFBB485511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExpressionSerializer.Infrastructure", "Corex.ExpressionSerializer.Infrastructure\Corex.ExpressionSerializer.Infrastructure.csproj", "{590ED830-7953-4B7D-A5E4-99AFBB485511}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExpressionSerializer.Derived", "ExpressionSerializer.Derived", "{0C473AFE-7395-4665-B3B5-115D12DA72CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.ExpressionSerializer.Derived.SLinq", "Corex.ExpressionSerializer.Derived.SLinq\Corex.ExpressionSerializer.Derived.SLinq.csproj", "{ED370B62-7DEE-4E6C-9E64-6911E6CA27A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.ExpressionSerializer.Derived.SLinq", "Corex.ExpressionSerializer.Derived.SLinq\Corex.ExpressionSerializer.Derived.SLinq.csproj", "{ED370B62-7DEE-4E6C-9E64-6911E6CA27A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PushSender.Infrastructure", "Corex.PushSender.Infrastructure\Corex.PushSender.Infrastructure.csproj", "{CAD53C5C-DCB1-455E-B653-DBDFC8371230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.PushSender.Infrastructure", "Corex.PushSender.Infrastructure\Corex.PushSender.Infrastructure.csproj", "{CAD53C5C-DCB1-455E-B653-DBDFC8371230}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PushSender.Derived", "PushSender.Derived", "{02DF6B92-3A53-464F-B09C-2C401C723552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PushSender.Derived.OneSignal", "Corex.PushSender.Derived.OneSignal\Corex.PushSender.Derived.OneSignal.csproj", "{30BFD633-4C72-4B13-8B35-45768B46FC16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.PushSender.Derived.OneSignal", "Corex.PushSender.Derived.OneSignal\Corex.PushSender.Derived.OneSignal.csproj", "{30BFD633-4C72-4B13-8B35-45768B46FC16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.JsonSerializer.Derived.SJson", "Corex.JsonSerializer.Derived.SJson\Corex.JsonSerializer.Derived.SJson.csproj", "{68B0A602-3B69-4269-A314-02A8D753C490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.JsonSerializer.Derived.SJson", "Corex.JsonSerializer.Derived.SJson\Corex.JsonSerializer.Derived.SJson.csproj", "{68B0A602-3B69-4269-A314-02A8D753C490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.SmsSender.Infrastructure", "Corex.SmsSender.Infrastructure\Corex.SmsSender.Infrastructure.csproj", "{90D59C10-0FA1-469A-AFE5-969894F0DD73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.SmsSender.Infrastructure", "Corex.SmsSender.Infrastructure\Corex.SmsSender.Infrastructure.csproj", "{90D59C10-0FA1-469A-AFE5-969894F0DD73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmsSender.Derived", "SmsSender.Derived", "{8F5A6473-6C50-45CD-B0A6-B0BAEEA1C455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.SmsSender.Derived.PostaGuvercini", "Corex.SmsSender.Derived.PostaGuvercini\Corex.SmsSender.Derived.PostaGuvercini.csproj", "{4C51D395-64DC-4E25-9870-435ECC33F7FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.SmsSender.Derived.PostaGuvercini", "Corex.SmsSender.Derived.PostaGuvercini\Corex.SmsSender.Derived.PostaGuvercini.csproj", "{4C51D395-64DC-4E25-9870-435ECC33F7FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.EmailSender.Infrastructure", "Corex.EmailSender.Infrastructure\Corex.EmailSender.Infrastructure.csproj", "{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.EmailSender.Infrastructure", "Corex.EmailSender.Infrastructure\Corex.EmailSender.Infrastructure.csproj", "{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmailSender.Derived", "EmailSender.Derived", "{D9A742DC-C487-42A5-A1C4-EC77FB408A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.EmailSender.Derived.Smtp", "Corex.EmailSender.Derived.Smtp\Corex.EmailSender.Derived.Smtp.csproj", "{B00C30D1-739F-4005-B629-83D3C82166B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.EmailSender.Derived.Smtp", "Corex.EmailSender.Derived.Smtp\Corex.EmailSender.Derived.Smtp.csproj", "{B00C30D1-739F-4005-B629-83D3C82166B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.EmailSender.Derived.SendGrid", "Corex.EmailSender.Derived.SendGrid\Corex.EmailSender.Derived.SendGrid.csproj", "{26B63ADE-9C71-4B75-9458-A4C7A2229201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.EmailSender.Derived.SendGrid", "Corex.EmailSender.Derived.SendGrid\Corex.EmailSender.Derived.SendGrid.csproj", "{26B63ADE-9C71-4B75-9458-A4C7A2229201}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.PDFConverter.Infrastructure", "Corex.PDFConverter.Infrastructure\Corex.PDFConverter.Infrastructure.csproj", "{FF74C658-1303-4237-9E5F-0BC7281ADC90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.CloudFile.Infrastructure", "Corex.CloudFile.Infrastructure\Corex.CloudFile.Infrastructure.csproj", "{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFile.Derived", "CloudFile.Derived", "{2EF07D9F-9A24-4BC3-9F24-13C8919B11FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CloudFile.Derived.AzureBlobStorage", "Corex.CloudFile.Derived.AzureBlobStorage\Corex.CloudFile.Derived.AzureBlobStorage.csproj", "{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -267,6 +275,18 @@ Global
 		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF74C658-1303-4237-9E5F-0BC7281ADC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF74C658-1303-4237-9E5F-0BC7281ADC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF74C658-1303-4237-9E5F-0BC7281ADC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF74C658-1303-4237-9E5F-0BC7281ADC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -317,6 +337,10 @@ Global
 		{D9A742DC-C487-42A5-A1C4-EC77FB408A29} = {1A3F11D4-CAF6-487B-A01A-5A73C2B4C01D}
 		{B00C30D1-739F-4005-B629-83D3C82166B4} = {D9A742DC-C487-42A5-A1C4-EC77FB408A29}
 		{26B63ADE-9C71-4B75-9458-A4C7A2229201} = {D9A742DC-C487-42A5-A1C4-EC77FB408A29}
+		{FF74C658-1303-4237-9E5F-0BC7281ADC90} = {6AB03205-50E4-4878-BEDD-3387D007D04E}
+		{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08} = {EC7C1BAB-BE22-4854-BDD9-C097057E4348}
+		{2EF07D9F-9A24-4BC3-9F24-13C8919B11FC} = {EC7C1BAB-BE22-4854-BDD9-C097057E4348}
+		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF} = {2EF07D9F-9A24-4BC3-9F24-13C8919B11FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
