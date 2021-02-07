@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Corex.CloudFile.Infrastructure\Corex.CloudFile.Infrastructure.csproj" />
     <ProjectReference Include="..\Corex.Model.Infrastructure\Corex.Model.Infrastructure.csproj" />
   </ItemGroup>
 

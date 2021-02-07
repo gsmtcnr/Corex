@@ -141,6 +141,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFile.Derived", "CloudF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CloudFile.Derived.AzureBlobStorage", "Corex.CloudFile.Derived.AzureBlobStorage\Corex.CloudFile.Derived.AzureBlobStorage.csproj", "{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDFConverter.Derived", "PDFConverter.Derived", "{5EDB016B-A870-451D-8DB9-F6EFC2268885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PDFConverter.Derived.SelectPDFConverter", "Corex.PDFConverter.Derived.SelectPDFConverter\Corex.PDFConverter.Derived.SelectPDFConverter.csproj", "{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PDFConverter.Derived.DinkToPDFConverter", "Corex.PDFConverter.Derived.DinkToPDFConverter\Corex.PDFConverter.Derived.DinkToPDFConverter.csproj", "{07FE5C25-06E6-401E-BE58-443D3DB3F660}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -287,6 +293,14 @@ Global
 		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -341,6 +355,9 @@ Global
 		{EC94F728-B4B6-4CD1-AF42-EB6B21F08F08} = {EC7C1BAB-BE22-4854-BDD9-C097057E4348}
 		{2EF07D9F-9A24-4BC3-9F24-13C8919B11FC} = {EC7C1BAB-BE22-4854-BDD9-C097057E4348}
 		{0CC510C7-CEA9-4024-B7B8-CFCE7F42C6FF} = {2EF07D9F-9A24-4BC3-9F24-13C8919B11FC}
+		{5EDB016B-A870-451D-8DB9-F6EFC2268885} = {6AB03205-50E4-4878-BEDD-3387D007D04E}
+		{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5} = {5EDB016B-A870-451D-8DB9-F6EFC2268885}
+		{07FE5C25-06E6-401E-BE58-443D3DB3F660} = {5EDB016B-A870-451D-8DB9-F6EFC2268885}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}

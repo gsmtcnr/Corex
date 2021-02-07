@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\SCHome\.nuget\packages\select.htmltopdf.netcore\20.2.0\contentFiles\any\any\Select.Html.dep" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="20.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.Model.Infrastructure\Corex.Model.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corex.PDFConverter.Infrastructure\Corex.PDFConverter.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
