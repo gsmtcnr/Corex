@@ -125,6 +125,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmsSender.Derived", "SmsSen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.SmsSender.Derived.PostaGuvercini", "Corex.SmsSender.Derived.PostaGuvercini\Corex.SmsSender.Derived.PostaGuvercini.csproj", "{4C51D395-64DC-4E25-9870-435ECC33F7FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.EmailSender.Infrastructure", "Corex.EmailSender.Infrastructure\Corex.EmailSender.Infrastructure.csproj", "{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmailSender.Derived", "EmailSender.Derived", "{D9A742DC-C487-42A5-A1C4-EC77FB408A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.EmailSender.Derived.Smtp", "Corex.EmailSender.Derived.Smtp\Corex.EmailSender.Derived.Smtp.csproj", "{B00C30D1-739F-4005-B629-83D3C82166B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.EmailSender.Derived.SendGrid", "Corex.EmailSender.Derived.SendGrid\Corex.EmailSender.Derived.SendGrid.csproj", "{26B63ADE-9C71-4B75-9458-A4C7A2229201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -247,6 +255,18 @@ Global
 		{4C51D395-64DC-4E25-9870-435ECC33F7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C51D395-64DC-4E25-9870-435ECC33F7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C51D395-64DC-4E25-9870-435ECC33F7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00C30D1-739F-4005-B629-83D3C82166B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00C30D1-739F-4005-B629-83D3C82166B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00C30D1-739F-4005-B629-83D3C82166B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00C30D1-739F-4005-B629-83D3C82166B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B63ADE-9C71-4B75-9458-A4C7A2229201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -293,6 +313,10 @@ Global
 		{90D59C10-0FA1-469A-AFE5-969894F0DD73} = {1987089A-D7E5-4CCC-84C3-B033875577F4}
 		{8F5A6473-6C50-45CD-B0A6-B0BAEEA1C455} = {1987089A-D7E5-4CCC-84C3-B033875577F4}
 		{4C51D395-64DC-4E25-9870-435ECC33F7FB} = {8F5A6473-6C50-45CD-B0A6-B0BAEEA1C455}
+		{38325C67-9C9B-4C59-B80F-10A3C1CCFA4A} = {1A3F11D4-CAF6-487B-A01A-5A73C2B4C01D}
+		{D9A742DC-C487-42A5-A1C4-EC77FB408A29} = {1A3F11D4-CAF6-487B-A01A-5A73C2B4C01D}
+		{B00C30D1-739F-4005-B629-83D3C82166B4} = {D9A742DC-C487-42A5-A1C4-EC77FB408A29}
+		{26B63ADE-9C71-4B75-9458-A4C7A2229201} = {D9A742DC-C487-42A5-A1C4-EC77FB408A29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
