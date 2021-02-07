@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.SmsSender.Infrastructure\Corex.SmsSender.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corex.Utility.Infrastructure\Corex.Utility.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
