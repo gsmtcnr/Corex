@@ -147,6 +147,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PDFConverter.Derived.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.PDFConverter.Derived.DinkToPDFConverter", "Corex.PDFConverter.Derived.DinkToPDFConverter\Corex.PDFConverter.Derived.DinkToPDFConverter.csproj", "{07FE5C25-06E6-401E-BE58-443D3DB3F660}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "70.1.CipherEncryption", "70.1.CipherEncryption", "{983A770A-391F-403C-8E44-73BEA419F912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CipherEncryption.Infrastructure", "Corex.CipherEncryption.Infrastructure\Corex.CipherEncryption.Infrastructure.csproj", "{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CipherEncryption.Derived", "CipherEncryption.Derived", "{6A2BA44E-5306-44CB-8DCA-77A2AD4DB273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.CipherEncryption.Derived.SHA256", "Corex.CipherEncryption.Derived.SHA256\Corex.CipherEncryption.Derived.SHA256.csproj", "{9FA255FE-50F3-4C26-8A27-7AE3D431526E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -301,6 +309,14 @@ Global
 		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07FE5C25-06E6-401E-BE58-443D3DB3F660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7AD336-ED28-45F8-949D-0AC9284BEFD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA255FE-50F3-4C26-8A27-7AE3D431526E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -358,6 +374,10 @@ Global
 		{5EDB016B-A870-451D-8DB9-F6EFC2268885} = {6AB03205-50E4-4878-BEDD-3387D007D04E}
 		{C09DD2D0-BF3E-4D32-AA35-5DE10910C2A5} = {5EDB016B-A870-451D-8DB9-F6EFC2268885}
 		{07FE5C25-06E6-401E-BE58-443D3DB3F660} = {5EDB016B-A870-451D-8DB9-F6EFC2268885}
+		{983A770A-391F-403C-8E44-73BEA419F912} = {9295AF8A-CCE3-4033-9355-EDA3E80D2CF6}
+		{8C7AD336-ED28-45F8-949D-0AC9284BEFD0} = {983A770A-391F-403C-8E44-73BEA419F912}
+		{6A2BA44E-5306-44CB-8DCA-77A2AD4DB273} = {983A770A-391F-403C-8E44-73BEA419F912}
+		{9FA255FE-50F3-4C26-8A27-7AE3D431526E} = {6A2BA44E-5306-44CB-8DCA-77A2AD4DB273}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
