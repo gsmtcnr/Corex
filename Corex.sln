@@ -157,11 +157,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.CipherEncryption.Deri
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache.Derived", "Cache.Derived", "{F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Cache.Infrastructure", "Corex.Cache.Infrastructure\Corex.Cache.Infrastructure.csproj", "{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Cache.Infrastructure", "Corex.Cache.Infrastructure\Corex.Cache.Infrastructure.csproj", "{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Cache.Derived.Memory", "Corex.Cache.Derived.Memory\Corex.Cache.Derived.Memory.csproj", "{35C05296-6C6D-47F2-9F86-D72AF0F3292A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Cache.Derived.Memory", "Corex.Cache.Derived.Memory\Corex.Cache.Derived.Memory.csproj", "{35C05296-6C6D-47F2-9F86-D72AF0F3292A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Cache.Derived.Redis", "Corex.Cache.Derived.Redis\Corex.Cache.Derived.Redis.csproj", "{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Cache.Derived.Redis", "Corex.Cache.Derived.Redis\Corex.Cache.Derived.Redis.csproj", "{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "80.1.MongoDB", "80.1.MongoDB", "{A7A00BBB-FA28-4EBB-82C5-732EE31DACE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.MongoDB.Inftrastructure", "Corex.MongoDB.Inftrastructure\Corex.MongoDB.Inftrastructure.csproj", "{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDB.Derived", "MongoDB.Derived", "{F62BD345-650C-4DB5-AD4E-EBFDC9B3A128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.MongoDB.Derived.V1", "Corex.MongoDB.Derived.V1\Corex.MongoDB.Derived.V1.csproj", "{C7096313-2A6F-4FE7-BE8B-B05529621720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -337,6 +345,14 @@ Global
 		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -402,6 +418,10 @@ Global
 		{4A3B704D-E5BC-4A9C-AD3A-41D533D5653E} = {1F5CAA66-7B3B-46AC-BBE1-9452CF1B0FD5}
 		{35C05296-6C6D-47F2-9F86-D72AF0F3292A} = {F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907}
 		{60E6E7DD-8DDC-4644-B874-FFA7FEF208E1} = {F12A0879-3FD3-4C94-AAB4-2FAC8AD2A907}
+		{A7A00BBB-FA28-4EBB-82C5-732EE31DACE4} = {8D802930-CB58-445D-97E6-187BC51B833E}
+		{5B49DEE1-25E4-4878-8C7F-747CE12EAF44} = {A7A00BBB-FA28-4EBB-82C5-732EE31DACE4}
+		{F62BD345-650C-4DB5-AD4E-EBFDC9B3A128} = {A7A00BBB-FA28-4EBB-82C5-732EE31DACE4}
+		{C7096313-2A6F-4FE7-BE8B-B05529621720} = {F62BD345-650C-4DB5-AD4E-EBFDC9B3A128}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}
