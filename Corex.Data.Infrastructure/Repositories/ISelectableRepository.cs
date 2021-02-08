@@ -1,5 +1,5 @@
 ﻿using Corex.Model.Derived.EntityModel;
-using Corex.Model.Derived.PageModel;
+using Corex.Model.Infrastructure;
 using PagedList.Core;
 using System;
 using System.Linq;

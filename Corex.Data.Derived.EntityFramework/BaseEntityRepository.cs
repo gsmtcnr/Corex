@@ -1,12 +1,12 @@
 ﻿using Corex.Data.Infrastructure;
 using Corex.Model.Derived.EntityModel;
-using Corex.Model.Derived.PageModel;
+using Corex.Model.Infrastructure;
+using Corex.Utility.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Corex.Utility.Infrastructure;
 
 namespace Corex.Data.Derived.EntityFramework
 {

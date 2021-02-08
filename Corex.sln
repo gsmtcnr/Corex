@@ -165,11 +165,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.Cache.Derived.Redis",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "80.1.MongoDB", "80.1.MongoDB", "{A7A00BBB-FA28-4EBB-82C5-732EE31DACE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.MongoDB.Inftrastructure", "Corex.MongoDB.Inftrastructure\Corex.MongoDB.Inftrastructure.csproj", "{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.MongoDB.Inftrastructure", "Corex.MongoDB.Inftrastructure\Corex.MongoDB.Inftrastructure.csproj", "{5B49DEE1-25E4-4878-8C7F-747CE12EAF44}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDB.Derived", "MongoDB.Derived", "{F62BD345-650C-4DB5-AD4E-EBFDC9B3A128}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.MongoDB.Derived.V1", "Corex.MongoDB.Derived.V1\Corex.MongoDB.Derived.V1.csproj", "{C7096313-2A6F-4FE7-BE8B-B05529621720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corex.MongoDB.Derived.V1", "Corex.MongoDB.Derived.V1\Corex.MongoDB.Derived.V1.csproj", "{C7096313-2A6F-4FE7-BE8B-B05529621720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Inftrastructure", "Corex.Operation.Inftrastructure\Corex.Operation.Inftrastructure.csproj", "{79A62D4C-CD8E-4972-9C8E-ACE00A2C82BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Operation.Derived", "Operation.Derived", "{8C0AE06F-B6E2-4F12-BDBF-960B2218A637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Derived.BusinessOperation", "Corex.Operation.Derived.BusinessOperation\Corex.Operation.Derived.BusinessOperation.csproj", "{32BDFA67-3613-40AB-B97B-86FFFA4BA404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Derived.ValidationOperation", "Corex.Operation.Derived.ValidationOperation\Corex.Operation.Derived.ValidationOperation.csproj", "{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Derived.DataOperation", "Corex.Operation.Derived.DataOperation\Corex.Operation.Derived.DataOperation.csproj", "{649F4862-7618-480A-9AE7-2268A6DD23CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -353,6 +363,22 @@ Global
 		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7096313-2A6F-4FE7-BE8B-B05529621720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A62D4C-CD8E-4972-9C8E-ACE00A2C82BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A62D4C-CD8E-4972-9C8E-ACE00A2C82BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A62D4C-CD8E-4972-9C8E-ACE00A2C82BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A62D4C-CD8E-4972-9C8E-ACE00A2C82BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BDFA67-3613-40AB-B97B-86FFFA4BA404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BDFA67-3613-40AB-B97B-86FFFA4BA404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BDFA67-3613-40AB-B97B-86FFFA4BA404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BDFA67-3613-40AB-B97B-86FFFA4BA404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -422,6 +448,11 @@ Global
 		{5B49DEE1-25E4-4878-8C7F-747CE12EAF44} = {A7A00BBB-FA28-4EBB-82C5-732EE31DACE4}
 		{F62BD345-650C-4DB5-AD4E-EBFDC9B3A128} = {A7A00BBB-FA28-4EBB-82C5-732EE31DACE4}
 		{C7096313-2A6F-4FE7-BE8B-B05529621720} = {F62BD345-650C-4DB5-AD4E-EBFDC9B3A128}
+		{79A62D4C-CD8E-4972-9C8E-ACE00A2C82BA} = {E66D2E4F-DADE-4C6C-A267-A1873E7D52CF}
+		{8C0AE06F-B6E2-4F12-BDBF-960B2218A637} = {E66D2E4F-DADE-4C6C-A267-A1873E7D52CF}
+		{32BDFA67-3613-40AB-B97B-86FFFA4BA404} = {8C0AE06F-B6E2-4F12-BDBF-960B2218A637}
+		{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6} = {8C0AE06F-B6E2-4F12-BDBF-960B2218A637}
+		{649F4862-7618-480A-9AE7-2268A6DD23CB} = {8C0AE06F-B6E2-4F12-BDBF-960B2218A637}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}

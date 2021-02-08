@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.Model.Derived.EntityModel\Corex.Model.Derived.EntityModel.csproj" />
+    <ProjectReference Include="..\Corex.Validation.Infrastructure\Corex.Validation.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
