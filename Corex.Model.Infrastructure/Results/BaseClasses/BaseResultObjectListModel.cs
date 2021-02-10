@@ -3,14 +3,14 @@ using System.Linq;
 
 namespace Corex.Model.Infrastructure
 {
-    public abstract class BaseResultObjectListModel<T> : BaseResultModel, IResultObjectListModel<T>
-     where T : class, new()
+    public abstract class BaseResultObjectListModel<TData> : BaseResultModel, IResultObjectListModel<TData>
+     where TData : class, new()
     {
         public BaseResultObjectListModel()
         {
-            Data = new List<T>();
+            Data = new List<TData>();
         }
-        public BaseResultObjectListModel(List<T> data)
+        public BaseResultObjectListModel(List<TData> data)
         {
             Data = data;
         }
@@ -34,6 +34,6 @@ namespace Corex.Model.Infrastructure
             else
                 IsSuccess = true;
         }
-        public List<T> Data { get; set; }
+        public List<TData> Data { get; set; }
     }
 }

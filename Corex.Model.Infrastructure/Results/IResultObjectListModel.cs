@@ -2,9 +2,9 @@
 
 namespace Corex.Model.Infrastructure
 {
-    public interface IResultObjectListModel<T> : IResultModel
-          where T : class, new()
+    public interface IResultObjectListModel<TData> : IResultModel
+          where TData : class, new()
     {
-        List<T> Data { get; set; }
+        List<TData> Data { get; set; }
     }
 }

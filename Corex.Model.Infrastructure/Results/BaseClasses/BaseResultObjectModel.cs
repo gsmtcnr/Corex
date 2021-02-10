@@ -2,14 +2,14 @@
 
 namespace Corex.Model.Infrastructure
 {
-    public abstract class BaseResultObjectModel<T> : BaseResultModel, IResultObjectModel<T>
-   where T : class, new()
+    public abstract class BaseResultObjectModel<TData> : BaseResultModel, IResultObjectModel<TData>
+    where TData : class, new()
     {
         public BaseResultObjectModel()
         {
-            Data = new T();
+            Data = new TData();
         }
-        public BaseResultObjectModel(T data)
+        public BaseResultObjectModel(TData data)
         {
             Data = data;
         }
@@ -23,6 +23,6 @@ namespace Corex.Model.Infrastructure
             else
                 IsSuccess = true;
         }
-        public T Data { get; set; }
+        public TData Data { get; set; }
     }
 }

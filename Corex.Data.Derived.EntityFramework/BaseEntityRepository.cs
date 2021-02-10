@@ -20,25 +20,21 @@ namespace Corex.Data.Derived.EntityFramework
     {
         public OC _context;
         public readonly DbSet<TEntityModel> _dbSet;
-        private IQueryable<TEntityModel> _queryEntity;
+        private readonly IQueryable<TEntityModel> _queryEntity;
         public BaseEntityRepository()
         {
             _context = new OC();
             _dbSet = _context.Set<TEntityModel>();
             _queryEntity = _dbSet.Where(s => s.IsDeleted == false).AsNoTracking();
         }
-
-        public bool Delete(TEntityModel item)
+        #region Private Methods
+        protected void TrackingControl(TEntityModel item)
         {
-            item.IsDeleted = true;
-            item.DeletedTime = DateTime.Now;
-            TrackingControl(item);
-            _dbSet.Attach(item);
-            _context.Entry(item).State = EntityState.Modified;
-            _context.SaveChanges();
-            return true;//işlem sırasında hata olmadıysa true..
+            bool tracking = _context.ChangeTracker.Entries<TEntityModel>().Any(s => s.Entity.Id.Equals(item.Id));
+            if (tracking)
+                _context.ChangeTracker.Entries<TEntityModel>().FirstOrDefault(s => s.Entity.Id.Equals(item.Id)).State = EntityState.Detached;
         }
-
+        #endregion
         public TEntityModel Get(Expression<Func<TEntityModel, bool>> predicate)
         {
             return _queryEntity.Where(predicate).FirstOrDefault();
@@ -76,6 +72,16 @@ namespace Corex.Data.Derived.EntityFramework
             _context.SaveChanges();
             return item;
         }
+        public bool Delete(TEntityModel item)
+        {
+            item.IsDeleted = true;
+            item.DeletedTime = DateTime.Now;
+            TrackingControl(item);
+            _dbSet.Attach(item);
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
+            return true;//işlem sırasında hata olmadıysa true..
+        }
         protected virtual IQueryable<TEntityModel> ListExpression(IQueryable<TEntityModel> query, IPagerInputModel input)
         {
             return query;
@@ -100,20 +106,13 @@ namespace Corex.Data.Derived.EntityFramework
         }
         public IPagedList<TEntityModel> GetList(IPagerInputModel pagerInputModel)
         {
-            var query = ListExpression(_queryEntity, pagerInputModel);
+            IQueryable<TEntityModel> query = ListExpression(_queryEntity, pagerInputModel);
             query = OrderByExpression(query, pagerInputModel);
             query = IsActiveExpression(pagerInputModel, query);
             var paged = query.ToPagedList(pagerInputModel.PageNumber, pagerInputModel.PageSize);
             return paged;
         }
 
-        #region Private Methods
-        protected void TrackingControl(TEntityModel item)
-        {
-            bool tracking = _context.ChangeTracker.Entries<TEntityModel>().Any(s => s.Entity.Id.Equals(item.Id));
-            if (tracking)
-                _context.ChangeTracker.Entries<TEntityModel>().FirstOrDefault(s => s.Entity.Id.Equals(item.Id)).State = EntityState.Detached;
-        }
-        #endregion
+        
     }
 }

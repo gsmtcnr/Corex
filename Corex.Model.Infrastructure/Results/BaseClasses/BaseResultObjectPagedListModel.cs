@@ -4,15 +4,15 @@ using System.Linq;
 
 namespace Corex.Model.Infrastructure
 {
-    public abstract class BaseResultObjectPagedListModel<T> : BaseResultModel, IResultObjectPagedListModel<T>
-         where T : class, new()
+    public abstract class BaseResultObjectPagedListModel<TData> : BaseResultModel, IResultObjectPagedListModel<TData>
+         where TData : class, new()
     {
         public BaseResultObjectPagedListModel()
         {
             IsSuccess = false;
-            Data = new List<T>();
+            Data = new List<TData>();
         }
-        public BaseResultObjectPagedListModel(IPagedList metaData, List<T> data)
+        public BaseResultObjectPagedListModel(IPagedList metaData, List<TData> data)
         {
             Data = data;
             TotalItemCount = metaData.TotalItemCount;
@@ -22,6 +22,17 @@ namespace Corex.Model.Infrastructure
             PageNumber = metaData.PageNumber;
             IsFirstPage = metaData.IsFirstPage;
             IsLastPage = metaData.IsLastPage;
+        }
+        public BaseResultObjectPagedListModel(IResultPagedListModel pagedListModel, List<TData> data)
+        {
+
+            Data = data;
+            TotalItemCount = pagedListModel.TotalItemCount;
+            PageCount = pagedListModel.PageCount;
+            HasNextPage = pagedListModel.HasNextPage;
+            HasPreviousPage = pagedListModel.HasPreviousPage;
+            PageNumber = pagedListModel.PageCount;
+
         }
         public override void SetResult()
         {
@@ -43,7 +54,7 @@ namespace Corex.Model.Infrastructure
             else
                 IsSuccess = true;
         }
-        public List<T> Data { get; set; }
+        public List<TData> Data { get; set; }
         public int TotalItemCount { get; set; }
         public int PageNumber { get; set; }
         public int PageCount { get; set; }

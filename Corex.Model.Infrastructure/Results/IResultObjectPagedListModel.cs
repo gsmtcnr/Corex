@@ -2,9 +2,9 @@
 
 namespace Corex.Model.Infrastructure
 {
-    public interface IResultObjectPagedListModel<T> : IResultPagedListModel, IResultModel
-         where T : class, new()
+    public interface IResultObjectPagedListModel<TData> : IResultPagedListModel, IResultModel
+         where TData : class, new()
     {
-        List<T> Data { get; set; }
+        List<TData> Data { get; set; }
     }
 }

@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 namespace Corex.Operation.Infrastructure
 {
-    public interface IValidationOperation : ISingletonDependecy
+    public interface IValidationOperation<T> : ISingletonDependecy
+    where T : class
     {
+        T ItemDto { get;  set; }
+        List<ValidationBase<T>> GetValidations();
         List<ValidationMessage> GetValidationResults();
     }
 }

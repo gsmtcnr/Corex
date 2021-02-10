@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.ExceptionHandling.Derived.Validation\Corex.ExceptionHandling.Derived.Validation.csproj" />
+    <ProjectReference Include="..\Corex.ExceptionHandling.Manager\Corex.ExceptionHandling.Manager.csproj" />
+    <ProjectReference Include="..\Corex.Mapper.Infrastructure\Corex.Mapper.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corex.Model.Derived.EntityModel\Corex.Model.Derived.EntityModel.csproj" />
+    <ProjectReference Include="..\Corex.Model.Infrastructure\Corex.Model.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corex.Operation.Derived.DataOperation\Corex.Operation.Derived.DataOperation.csproj" />
+    <ProjectReference Include="..\Corex.Operation.Inftrastructure\Corex.Operation.Inftrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

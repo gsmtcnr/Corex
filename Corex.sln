@@ -181,6 +181,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Derived.Val
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Derived.DataOperation", "Corex.Operation.Derived.DataOperation\Corex.Operation.Derived.DataOperation.csproj", "{649F4862-7618-480A-9AE7-2268A6DD23CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corex.Operation.Manager", "Corex.Operation.Manager\Corex.Operation.Manager.csproj", "{2C9B1FF7-C6B8-424D-8FD7-54C2E82CFCD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -379,6 +381,10 @@ Global
 		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{649F4862-7618-480A-9AE7-2268A6DD23CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C9B1FF7-C6B8-424D-8FD7-54C2E82CFCD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C9B1FF7-C6B8-424D-8FD7-54C2E82CFCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C9B1FF7-C6B8-424D-8FD7-54C2E82CFCD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C9B1FF7-C6B8-424D-8FD7-54C2E82CFCD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -453,6 +459,7 @@ Global
 		{32BDFA67-3613-40AB-B97B-86FFFA4BA404} = {8C0AE06F-B6E2-4F12-BDBF-960B2218A637}
 		{3CDE4577-DFB0-48AA-B5FA-192F1801BEB6} = {8C0AE06F-B6E2-4F12-BDBF-960B2218A637}
 		{649F4862-7618-480A-9AE7-2268A6DD23CB} = {8C0AE06F-B6E2-4F12-BDBF-960B2218A637}
+		{2C9B1FF7-C6B8-424D-8FD7-54C2E82CFCD2} = {E66D2E4F-DADE-4C6C-A267-A1873E7D52CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC4B3CA-BF13-4132-A239-BF8CFCD02765}

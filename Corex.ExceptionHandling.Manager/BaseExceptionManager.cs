@@ -4,36 +4,38 @@ using Corex.ExceptionHandling.Manager.Models;
 using Corex.Model.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Corex.ExceptionHandling.Manager
 {
     public abstract class BaseExceptionManager
     {
         // Resource işlemi varsa, burada yapılmalı. 
-        readonly Exception _ex;
+        private readonly Exception _ex;
         public BaseExceptionManager(Exception ex)
         {
             _ex = ex;
         }
-        public IList<IResultMessage> Messages { get; set; }
-        private void AddMesage(IResultMessage resultMessage)
+        public List<MessageItem> GetMessages()
         {
-            Messages.Add(resultMessage);
-        }
-        public void SetMessages()
-        {
+            List<MessageItem> resultMessages = new List<MessageItem>();
             ExceptionMessageModel messageModel = GetUFMessage(_ex);
-            if (messageModel.Messages.Any())
-            {
-                foreach (ExceptionMessage item in messageModel.Messages)
-                {
-                    AddMesage((IResultMessage)item);
-                }
-            }
+            SetMessages(resultMessages, messageModel);
+            return resultMessages;
         }
         #region Private Methods
-        private ExceptionMessageModel GetUFMessage(Exception exception)
+        private static void SetMessages(List<MessageItem> resultMessages, ExceptionMessageModel messageModel)
+        {
+
+                foreach (var item in messageModel.Messages)
+                {
+                    resultMessages.Add(new MessageItem
+                    {
+                        Code = item.Code,
+                        Message = item.Message
+                    });
+                }
+        }
+        private static ExceptionMessageModel GetUFMessage(Exception exception)
         {
             if (exception is BaseException)
             {
@@ -46,26 +48,25 @@ namespace Corex.ExceptionHandling.Manager
             }
             throw new Exception();
         }
-        private ExceptionMessageModel GenerateUFMessageFromBaseException(BaseException baseException)
+        private static ExceptionMessageModel GenerateUFMessageFromBaseException(BaseException baseException)
         {
             return GetExceptionMessageModel((IException)baseException);
         }
-        private ExceptionMessageModel GetExceptionMessageModel(IException myException)
+        private static ExceptionMessageModel GetExceptionMessageModel(IException myException)
         {
             IMessageCreator messageCreator = null;
-
             switch (myException)
             {
-                case IValidationException validationException:
+                case IValidationException:
                     messageCreator = new ValidationMessageCreator();
                     break;
-                case IBusinessException businessException:
+                case IBusinessException:
                     messageCreator = new BusinessMessageCreator();
                     break;
-                case IAuthenticationException authenticationException:
+                case IAuthenticationException:
                     messageCreator = new AuthenticationMessageCreator();
                     break;
-                case IDataException dataException:
+                case IDataException:
                     messageCreator = new DataMessageCreator();
                     break;
                 default:

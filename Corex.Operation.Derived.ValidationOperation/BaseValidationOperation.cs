@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace Corex.Operation.Derived.ValidationOperation
 {
-    public abstract class BaseValidationOperation<T> : IValidationOperation
+    public abstract class BaseValidationOperation<T> : IValidationOperation<T>
            where T : class
     {
-        public T ItemDto { get; protected set; }
+        public T ItemDto { get; set; }
         public BaseValidationOperation(T item)
         {
             ItemDto = item;
@@ -16,7 +16,7 @@ namespace Corex.Operation.Derived.ValidationOperation
         public virtual List<ValidationMessage> GetValidationResults()
         {
             List<ValidationMessage> messages = new List<ValidationMessage>();
-            foreach (var validationBase in GetValidations())
+            foreach (ValidationBase<T> validationBase in GetValidations())
             {
                 if (!validationBase.IsValid)
                 {

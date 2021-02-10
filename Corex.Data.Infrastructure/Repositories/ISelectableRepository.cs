@@ -16,6 +16,5 @@ namespace Corex.Data.Infrastructure
         TEntityModel Get(Expression<Func<TEntityModel, bool>> predicate);
         bool Contains(Expression<Func<TEntityModel, bool>> predicate);
         int Count(Expression<Func<TEntityModel, bool>> predicate);
-         
     }
 }

@@ -24,6 +24,7 @@ namespace Corex.Operation.Derived.DataOperation
         {
             this.Repository = SetRepository();
         }
+        #region Get Operations
         public virtual TEntity Get(Expression<Func<TEntity, bool>> predicate)
         {
             if (Repository is ISelectableRepository<TEntity, TKey> selectableRepository)
@@ -100,6 +101,8 @@ namespace Corex.Operation.Derived.DataOperation
             //Her zaman az parametre olan, daha çok parametre alanı kullanır.
             return GetList(s => s.Id.Equals(s.Id)).OrderByDescending(s => s.Id).ToList();
         }
+        #endregion
+        #region Insert Operations
         public virtual TEntity Insert(TEntity entity)
         {
             if (Repository is IInsertableRepository<TEntity, TKey> insertableRepository)
@@ -125,6 +128,8 @@ namespace Corex.Operation.Derived.DataOperation
                 Code = ValidationConstans.UNAUTHORIZED_REPO
             });
         }
+        #endregion
+        #region Update Operations
         public virtual TEntity Update(TEntity entity)
         {
 
@@ -150,6 +155,8 @@ namespace Corex.Operation.Derived.DataOperation
                 Code = ValidationConstans.UNAUTHORIZED_REPO
             });
         }
+        #endregion
+        #region Delete Operations
         public virtual bool Delete(TEntity entity)
         {
             if (entity == null)
@@ -182,6 +189,8 @@ namespace Corex.Operation.Derived.DataOperation
             TEntity entity = Get(s => s.Id.Equals(id));
             return Delete(entity);
         }
+        #endregion
+        #region Count Operations
         public virtual int Count(Expression<Func<TEntity, bool>> predicate)
         {
             if (Repository is ISelectableRepository<TEntity, TKey> selectableRepository)
@@ -203,6 +212,8 @@ namespace Corex.Operation.Derived.DataOperation
                 Code = ValidationConstans.UNAUTHORIZED_REPO
             });
         }
+        #endregion
+        #region Contains Operations
         public virtual bool Contains(Expression<Func<TEntity, bool>> predicate)
         {
             if (Repository is ISelectableRepository<TEntity, TKey> selectableRepository)
@@ -224,5 +235,6 @@ namespace Corex.Operation.Derived.DataOperation
                 Code = ValidationConstans.UNAUTHORIZED_REPO
             });
         }
+        #endregion
     }
 }

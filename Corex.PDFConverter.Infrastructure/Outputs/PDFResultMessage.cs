@@ -2,7 +2,7 @@
 
 namespace Corex.PDFConverter.Infrastructure.Outputs
 {
-    public class PDFResultMessage : BaseResultMessage, IResultMessage
+    public class PDFResultMessage : MessageItem
     {
     }
 }

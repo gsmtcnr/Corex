@@ -1,8 +1,8 @@
 ﻿namespace Corex.Model.Infrastructure
 {
-    public abstract class BaseSelectListItem : ISelectListItem
+    public abstract class BaseSelectListItem<TKey> : ISelectListItem<TKey>
     {
-        public int Id { get; set; }
+        public TKey Id { get; set; }
         public string Key { get; set; }
         public string Name { get; set; }
     }
