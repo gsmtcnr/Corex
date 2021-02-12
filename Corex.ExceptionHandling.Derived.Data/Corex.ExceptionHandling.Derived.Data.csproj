@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>Exception Handling "Data" hatalarını handle katmandır.</Description>
   </PropertyGroup>
 
   <ItemGroup>

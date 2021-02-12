@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>Log katmanına katılım gösteren SQL'e loglama yaptırmaya olanak sağlayan pakettir.</Description>
   </PropertyGroup>
 
   <ItemGroup>

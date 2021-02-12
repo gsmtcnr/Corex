@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>Data katmanı alt yapısına katılım gösteren ORM EntityFramework paketidir.</Description>
   </PropertyGroup>
 
   <ItemGroup>

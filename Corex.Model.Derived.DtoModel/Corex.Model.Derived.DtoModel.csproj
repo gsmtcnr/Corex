@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>EntityModel ile oluşturduğumuz data katmanının transfer objelerinin bulunduğu katmandır
+Data Transfer Object</Description>
   </PropertyGroup>
 
   <ItemGroup>
