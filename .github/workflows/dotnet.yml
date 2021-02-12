@@ -1,0 +1,45 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    services:
+      consul:
+        image: consul
+        # Kvit.IntegrationTests needs to a running Consul on 8900
+        ports:
+          - 8900:8500
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+
+    - name: Pack
+      if: ${{ github.event_name != 'pull_request' }}
+      run: dotnet pack --verbosity normal --configuration Release
+
+    - name: Push
+      if: ${{ github.event_name != 'pull_request' }}
+      run: dotnet nuget push nupkg/*.nupkg -s https://www.nuget.org/ -k ${{ secrets.nuget_api_key }}
