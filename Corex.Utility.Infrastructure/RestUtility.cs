@@ -10,7 +10,6 @@ namespace Corex.Utility.Infrastructure
 {
     public class RestUtility<T> where T : class
     {
-    
         private HttpWebRequest _webRequest;
         private readonly string _url;
         private readonly string _contentType;
