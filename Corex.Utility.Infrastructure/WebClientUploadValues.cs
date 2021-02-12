@@ -6,6 +6,7 @@ namespace Corex.Utility.Infrastructure
 {
     public class WebClientUploadValues
     {
+
         private readonly string _url;
         private readonly NameValueCollection _nameValueCollection;
         private readonly string _contentType;
