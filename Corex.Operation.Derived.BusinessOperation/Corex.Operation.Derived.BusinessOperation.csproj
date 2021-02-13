@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>İş parçası olarak kullanılır.
+Örn : Elimizde bulunan iki tane liste ile hesaplama işlemi yapacaksak bunu "businesOperation"da yapmalıyız.
+BusinessOperation, db'den data çekmez. DB'den alınmış datalar üzerinde işlemler yapar.</Description>
   </PropertyGroup>
 
   <ItemGroup>

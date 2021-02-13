@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>Sunum katmanı ile use-case ilişkisine giren ve sunum katmanının tek haberleştiği katmandır.
+Operasyon yöneticisine gelene kadar her bir sınıf tek bir görev yaparken, yönetici bu sınıfların birleştiği tek noktadır.</Description>
   </PropertyGroup>
 
   <ItemGroup>

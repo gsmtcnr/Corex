@@ -3,9 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Samet ÇINAR</Authors>
-    <Company>SÇ</Company>
+    <Company>Samet ÇINAR</Company>
     <Product>Corex</Product>
     <Description>System Text Json Serializer</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

@@ -21,9 +21,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Pack
-      if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet pack --verbosity normal --configuration Release
-    - name: Push
-      if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet nuget push nupkg/*.nupkg -s https://www.nuget.org/ -k ${{ secrets.NUGET_API_KEY }}
+    - name: Publish  
+      uses: brandedoutcast/publish-nuget@v2.5.2  
+      with:   
+       PROJECT_FILE_PATH: Extensions/Extensions.csproj  
+       NUGET_KEY: ${{secrets.NUGET_API_KEY}}  

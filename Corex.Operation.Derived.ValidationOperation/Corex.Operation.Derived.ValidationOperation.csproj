@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Samet ÇINAR</Authors>
+    <Description>Bir model üzerinde yapılan validasyonların listesini belirleyen, operasyon yöneticisine ileten katmandır.</Description>
   </PropertyGroup>
 
   <ItemGroup>
