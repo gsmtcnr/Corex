@@ -27,14 +27,11 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --no-restore
-
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build --configuration Release --no-restore
 
     - name: Pack
       if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet pack --verbosity normal --configuration Release
+      run: dotnet pack --no-build --configuration Release
 
     - name: Push
       if: ${{ github.event_name != 'pull_request' }}
