@@ -9,6 +9,13 @@ Projeye dahil olacak geliştircilerin kolay adapte olmasını sağlar.
 Reflection, WebClient, HttpWebRequest v.b yardımcı methodları kullanabilirsiniz.
 
 # Model
+
+Projelerimizin ana model yapısıdır. Proje içerisinde kullanacağımız entity, dto modellerin hepsi "IModel"den türemelidir.
+Her projemizin uniqeidentifer değeri kendine özgü kimisinde "int" kimisinde "guid" olarak. Ya da proje özelinde tablo tablo bu değer değişebilir.
+O yüzden IModel > TKey değerini generic alır. Örn : PK olarak int kullanıyorsanız UserModel<int> yapmalısınız.
+Her method "Results"da bulunan nesnelerden geri dönüş yapmalıdır.
+
+
 >DtoModel
 
 Data transfer objeleri için temel sınıf
@@ -129,14 +136,69 @@ Sizden "IUploadAsync" vermenizi talep edecek, sizde bu methodu override ederken 
 Fiziksel bir dosya yoluna kayıt etmek isterseniz eğer "BasePhysicalSelectPDFConverter" miras almanız size yeterli olacaktır.
 
 # Encryption
-  Url, kullanıcı şifresi v.b değerleri şifreleme alt yapısıdır.
+Url, kullanıcı şifresi v.b değerleri şifreleme alt yapısıdır.
 
-# Encryption.Cipher
+# > Encryption.Cipher
 Şifreleme işlemi yaparken bir string değişken kulanırız. Ancak bununla beraber "X" değeri ile şifrele dediğimizde bizim için daha güvenilir bir şifrelme olacaktır.
 
 > SHA256
 
 "BaseSHA256CipherEncryption" miras almanız Decrypt,Encrypt methodlarını kullanmanıza yeterli olacaktır.
+
+# Cache
+
+Datalarımıza belirli durumlarda sürekli ana veri tabanına gitmeden ulaşmak isteriz. Bu projemize bir çok fayda sağlayacaktır. 
+Not : Cacheleme sırasında her cacheKey'in önüne bir değer belirlemek isterseniz. Prefix property kullanabilirsiniz.
+> Memory
+
+"BaseMemoryCacheManager" miras aldığınızda uygulamanızın çalıştığı sunucunun RAM'ini kullanarak datalarınızı ön bellekte tutar.
+
+> Redis
+
+"BaseRedisCacheManager" miras aldığınızda belirteceğiniz connectionString ile Redis sunucunuza bağlanarak datalarınızı Redis üzerinde tutar.
+
+# Document DB
+
+Projemizin datasını saklamak için bir çok teknoloji mevcut. DocumentDB'ler de bunların en performanslı olanları diyebiliriz.
+
+> DocumentDB.MongoDB.V1
+  MongoDB kendi alt yapısı olan ve kendi içerisinde aynı bir mimarisi olan yapı. Bu v1 sürümüdür.
+
+# Operation
+
+Operasyonlarımız her bir işi bütünüyle üstülenecek takımlardır. BusinessOperation, DataOperation, ValidationOperation ve bunların yöneticisi Operation.Manager.
+
+> Business Operation
+
+Hesaplama v.b işlemler yapacağımız businessOperation katmanı için "BaseBusinessOperation" miras almalıyız. 
+
+> Data Operation
+
+Data Repository katmanı ile konuşacak ve datayı operation.manager'a getirecek katman için "BaseDataOperation" miras almalıyız. Kullanacağımız entity, repository, key değerlerini generic olarak vermeliyiz.
+
+> Validation Operation
+
+Validation katmanında bulunan her bir nesne için yapılmış validationların listesini çıkartıp operation.manager'a ileten operasyon katmanıdır. "BaseValidationOperation" miras alınarak validation listesi toplanacak model generic olarak set edilir.
+
+> Operation Manager
+
+Tüm operasyonların toplandığı tek katmandır. ApplicationLayer ile use-case ilişkisi kuran tek katmandır. 
+İçerisinde somut bir ExceptionManager ve her bir nesneye hizmet edebilecek "BaseOperationManager" bulunur.
+BaseOperationManager'a TKey,TEntity,TModel yani <int,UserEntity,UserModel> verildiğinde size tüm CRUD operasyonlarını sunar.
+Get, GetList, Insert, Update, Delete v.b
+
+# Prensetation
+ Sunum katmanı için alt yapı sağlar. BaseStartup ile settings yönetimine yardımcı olur.
+ 
+> MVC
+
+MVC projelerinde kullanılan özellikleri barındır. Session kullanmak isterseniz "UseSession:true", Authentication ayarlarını otomatik yapılmasını istiyorsanız "UseAuthentication:true" olarak belirleyebilirsiniz.
+
+> API
+
+Çok yakında..
+ 
+
 
 
 
