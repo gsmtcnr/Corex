@@ -6,7 +6,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Company>SÇ</Company>
     <Product>Corex</Product>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,12 +1,12 @@
-ï»¿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Authors>Samet Ã‡INAR</Authors>
-    <Company>Samet Ã‡INAR</Company>
+    <Authors>Samet ÇINAR</Authors>
+    <Company>Samet ÇINAR</Company>
     <Product>Corex</Product>
     <Description>System Text Json Serializer</Description>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

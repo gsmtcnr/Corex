@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Samet ÇINAR</Authors>
     <Description>Exception Handling "Validation" hatalarını handle katmandır.</Description>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
