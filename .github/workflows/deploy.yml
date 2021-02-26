@@ -31,8 +31,8 @@ jobs:
 
     - name: Pack
       if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet pack --configuration Release
+      run: dotnet pack -o nuget --configuration Release 
 
     - name: Push
       if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet nuget push **/bin/*.nupkg -s https://www.nuget.org/ -k ${{ secrets.nuget_api_key }}
+      run: dotnet nuget push nuget/*.nupkg -s https://www.nuget.org/ -k ${{ secrets.nuget_api_key }}
