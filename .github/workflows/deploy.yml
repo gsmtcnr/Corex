@@ -35,4 +35,4 @@ jobs:
 
     - name: Push
       if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet nuget push nuget/*.nupkg -s https://www.nuget.org/ -k ${{ secrets.nuget_api_key }}
+      run: dotnet nuget push **/bin/Release/*.nupkg -s https://www.nuget.org/ -k ${{ secrets.nuget_api_key }}
