@@ -31,7 +31,7 @@ jobs:
 
     - name: Pack
       if: ${{ github.event_name != 'pull_request' }}
-      run: dotnet pack -o nuget --configuration Release 
+      run: dotnet pack -o nuget --verbosity normal --configuration Release 
 
     - name: Push
       if: ${{ github.event_name != 'pull_request' }}
