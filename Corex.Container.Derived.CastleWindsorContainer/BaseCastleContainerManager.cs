@@ -11,11 +11,11 @@ namespace Corex.Container.Derived.CastleWindsorContainer
     public abstract class BaseCastleContainerManager : IContainerManager
     {
         private WindsorContainer _container;
-        public void Initialize(IConfigurationRoot configurationRoot)
+        public virtual void Initialize(IConfigurationRoot configurationRoot)
         {
             _container = new WindsorContainer();
             _container.Register(Component.For(typeof(IConfigurationRoot)).Instance(configurationRoot).LifestyleSingleton());
-            _container.Register(Classes.FromAssemblyInDirectory(new AssemblyFilter(DependecyInstaller._assemblyDirectoryName, mask: DependecyInstaller._mask))
+            _container.Register(Classes.FromAssemblyInDirectory(new AssemblyFilter(DependencyInstaller._assemblyDirectoryName, mask: DependencyInstaller._mask))
                   .BasedOn<IWindsorInstaller>()
                   .WithServiceBase()
                   .LifestyleTransient());
@@ -25,7 +25,7 @@ namespace Corex.Container.Derived.CastleWindsorContainer
 
             }
         }
-        public T Resolve<T>()
+        public virtual T Resolve<T>()
         {
             using (BeginScope())
             {
@@ -33,7 +33,7 @@ namespace Corex.Container.Derived.CastleWindsorContainer
             }
         }
 
-        public T[] ResolveAll<T>()
+        public virtual T[] ResolveAll<T>()
         {
             using (BeginScope())
             {

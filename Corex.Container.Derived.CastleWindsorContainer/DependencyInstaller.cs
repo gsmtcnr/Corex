@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Corex.Container.Derived.CastleWindsorContainer
 {
-    internal class DependecyInstaller : IWindsorInstaller
+    public class DependencyInstaller : IWindsorInstaller
     {
         internal const string _mask = "*.*";
         internal static string _assemblyDirectoryName { get; } = string.Empty;
