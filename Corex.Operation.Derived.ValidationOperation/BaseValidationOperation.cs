@@ -8,7 +8,7 @@ namespace Corex.Operation.Derived.ValidationOperation
            where T : class
     {
         public T Item { get; set; }
-        public  void SetItem(T item)
+        public virtual void SetItem(T item)
         {
             Item = item;
         }
