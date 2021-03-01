@@ -6,6 +6,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>Operasyon katmanının alt yapısıdır.
 Data, Validation ve OperationManager için aksiyon kurallarını belirler.</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

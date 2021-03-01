@@ -100,6 +100,18 @@ namespace Corex.Validation.Infrastucture
                 });
             }
         }
+        public virtual void EmailFormatValidation(string propertyName, string email)
+        {
+            if (!EmailFormatIsValid(email))
+            {
+                IsValid = false;
+                Messages.Add(new ValidationMessage()
+                {
+                    Code = ValidationConstans.NOTVALID_VALUE,
+                    Message = CodeFormat(propertyName)
+                });
+            }
+        }
         public virtual void RelationValidation(string propertyName, int value)
         {
             if (value == 0)
