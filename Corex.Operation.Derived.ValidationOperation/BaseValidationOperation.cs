@@ -7,11 +7,16 @@ namespace Corex.Operation.Derived.ValidationOperation
     public abstract class BaseValidationOperation<T> : IValidationOperation<T>
            where T : class
     {
-        public T ItemDto { get; set; }
-        public BaseValidationOperation(T item)
+        public T Item { get; set; }
+        //public BaseValidationOperation(T item)
+        //{
+        //    ItemDto = item;
+        //}
+        public BaseValidationOperation()
         {
-            ItemDto = item;
+            Item = SetItem();
         }
+        public abstract T SetItem();
         public abstract List<ValidationBase<T>> GetValidations();
         public virtual List<ValidationMessage> GetValidationResults()
         {

@@ -7,7 +7,7 @@ namespace Corex.Operation.Infrastructure
     public interface IValidationOperation<T> : ISingletonDependecy
     where T : class
     {
-        T ItemDto { get;  set; }
+        T Item { get;  set; }
         List<ValidationBase<T>> GetValidations();
         List<ValidationMessage> GetValidationResults();
     }
