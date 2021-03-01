@@ -7,11 +7,12 @@
     <Description>İş parçası olarak kullanılır.
 Örn : Elimizde bulunan iki tane liste ile hesaplama işlemi yapacaksak bunu "businesOperation"da yapmalıyız.
 BusinessOperation, db'den data çekmez. DB'den alınmış datalar üzerinde işlemler yapar.</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Corex.ExceptionHandling.Derived.Business\Corex.ExceptionHandling.Derived.Business.csproj" />
+    <ProjectReference Include="..\Corex.Operation.Inftrastructure\Corex.Operation.Inftrastructure.csproj" />
   </ItemGroup>
 
 </Project>
