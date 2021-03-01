@@ -7,6 +7,7 @@
     <Description>İş parçası olarak kullanılır.
 Örn : Elimizde bulunan iki tane liste ile hesaplama işlemi yapacaksak bunu "businesOperation"da yapmalıyız.
 BusinessOperation, db'den data çekmez. DB'den alınmış datalar üzerinde işlemler yapar.</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

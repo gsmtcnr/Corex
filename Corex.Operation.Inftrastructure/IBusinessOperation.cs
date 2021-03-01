@@ -2,7 +2,7 @@
 
 namespace Corex.Operation.Inftrastructure
 {
-    public interface IBusinessOperation : IScopedDependency
+    public interface IBusinessOperation : ISingletonDependecy
     {
     }
 }
