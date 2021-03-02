@@ -75,7 +75,7 @@ namespace Corex.Operation.Manager
         }
         #endregion
         #region Update
-        public abstract IValidationOperation<TModel> SetUpdateValidation(TModel dto);
+        public abstract IValidationOperation<TModel> SetUpdateValidationOperation(TModel dto);
         public virtual IResultObjectModel<TModel> Update(TModel dto)
         {
             ResultObjectModel<TModel> resultObjectModel = new ResultObjectModel<TModel>();
