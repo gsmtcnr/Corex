@@ -97,7 +97,7 @@ namespace Corex.Operation.Manager
         }
         private void UpdateValidationOperation(TModel dto)
         {
-            IValidationOperation<TModel> validationOperation = SetUpdateValidation(dto);
+            IValidationOperation<TModel> validationOperation = SetUpdateValidationOperation(dto);
             List<ValidationMessage> messages = validationOperation.GetValidationResults();
             if (messages.Any())
             {
