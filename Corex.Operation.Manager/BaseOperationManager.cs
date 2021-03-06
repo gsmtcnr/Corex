@@ -15,18 +15,19 @@ using System.Linq;
 namespace Corex.Operation.Manager
 {
     public abstract class BaseOperationManager<TKey, TEntity, TModel> : IOperationManager<TKey, TEntity, TModel>
-    where TEntity : class, IEntityModel<TKey>, new()
-    where TModel : class, IModel<TKey>, new()
+where TEntity : class, IEntityModel<TKey>, new()
+where TModel : class, IModel<TKey>, new()
     {
         /// <summary>
-        /// CachePrefix-Id
+        /// CachePrefix-{Model}-{Id}
         /// </summary>
-        private readonly string _cacheFormat = "{0}-{1}";
+        private readonly string _cacheFormat = "{0}-{1}-{2}";
         public string TransactionId { get; }
         public IDataOperation<TEntity, TKey> DataOperation { get; protected set; }
         public ICacheManager CacheManager { get; protected set; }
         public IMapping Mapper { get; protected set; }
         public ICacheSettings CacheSettings { get; set; }
+
         public abstract IDataOperation<TEntity, TKey> SetDataOperation();
         public abstract IMapping SetMapper();
         public abstract ICacheSettings SetCacheSettings();
@@ -47,13 +48,13 @@ namespace Corex.Operation.Manager
         private string CreateCacheKey(TKey key)
         {
             if (IsCacheActive())
-                return string.Format(_cacheFormat, CacheSettings.Prefix, key.ToString());
+                return string.Format(_cacheFormat, CacheSettings.Prefix, typeof(TModel).Name, key.ToString());
             return string.Empty;
         }
         private string CreateCacheKey(string param)
         {
             if (IsCacheActive())
-                return string.Format(_cacheFormat, CacheSettings.Prefix, param);
+                return string.Format(_cacheFormat, CacheSettings.Prefix, typeof(TModel).Name, param);
             return string.Empty;
         }
         #endregion
@@ -73,7 +74,7 @@ namespace Corex.Operation.Manager
                 TEntity entity = Mapper.Map<TModel, TEntity>(dto);
                 entity = DataOperation.Insert(entity);
                 resultObjectModel.Data = Mapper.Map<TEntity, TModel>(entity);
-                SetCacheByInsert(dto);
+                SetCacheByInsert(resultObjectModel.Data);
 
             }
             catch (System.Exception ex)
@@ -90,7 +91,8 @@ namespace Corex.Operation.Manager
         {
             if (IsCacheActive())
             {
-                string cacheKey = string.Format(_cacheFormat, dto.GetType().Name.ToString(), dto.Id);
+
+                string cacheKey = CreateCacheKey(dto.Id);
                 CacheManager.Remove<TModel>(cacheKey);
                 CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
             }
@@ -127,7 +129,7 @@ namespace Corex.Operation.Manager
                 TEntity entity = Mapper.Map<TModel, TEntity>(dto);
                 entity = DataOperation.Update(entity);
                 resultObjectModel.Data = Mapper.Map<TEntity, TModel>(entity);
-                SetCacheByUpdate(dto);
+                SetCacheByUpdate(resultObjectModel.Data);
             }
             catch (System.Exception ex)
             {
@@ -142,7 +144,7 @@ namespace Corex.Operation.Manager
         {
             if (IsCacheActive())
             {
-                string cacheKey = string.Format(_cacheFormat, dto.GetType().Name.ToString(), dto.Id);
+                string cacheKey = CreateCacheKey(dto.Id);
                 CacheManager.Remove<TModel>(cacheKey);
                 CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
             }
@@ -226,8 +228,10 @@ namespace Corex.Operation.Manager
         {
             IPagedList<TEntity> pagedList = null;
             if (IsCacheActive())
-                pagedList = CacheManager.Get<IPagedList<TEntity>>(CreateCacheKey(pagerInputModel.ParamString()));
-
+            {
+                string cacheKey = CreateCacheKey(pagerInputModel.ParamString());
+                pagedList = CacheManager.Get<IPagedList<TEntity>>(cacheKey);
+            }
             return pagedList;
         }
         private TModel GetByDb(TKey id, TModel dto)
@@ -239,12 +243,12 @@ namespace Corex.Operation.Manager
             }
             return dto;
         }
-        private TModel GetByCache(TKey id)
+        private TModel GetByCache(TKey key)
         {
             TModel dto = null;
             if (IsCacheActive())
             {
-                string cacheKey = CreateCacheKey(id);
+                string cacheKey = CreateCacheKey(key);
                 dto = CacheManager.Get<TModel>(cacheKey);
             }
             return dto;
