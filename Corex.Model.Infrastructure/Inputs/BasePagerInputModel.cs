@@ -20,6 +20,16 @@
         {
             get => p_SortDescending ?? true;
             set => p_SortDescending = value;
+        }/// <summary>
+         ///   string format = "pageNumber:{0}-pageSize:{1}-sortColumn:{2}-sortDescending:{3}";
+         ///    return string.Format(format, PageNumber, PageSize, SortColumn, SortDescending);
+         ///    Listeleme cache işlemi için gönderilen parametreleri bu şekilde belirtmeliyiz
+         /// </summary>
+         /// <returns></returns>
+        public virtual string ParamString()
+        {
+            string format = "pageNumber:{0}-pageSize:{1}-sortColumn:{2}-sortDescending:{3}";
+            return string.Format(format, PageNumber, PageSize, SortColumn, SortDescending);
         }
     }
 }

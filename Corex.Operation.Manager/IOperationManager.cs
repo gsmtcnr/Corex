@@ -1,5 +1,6 @@
 ﻿using Corex.Model.Derived.EntityModel;
 using Corex.Model.Infrastructure;
+using Corex.Operation.Inftrastructure;
 
 namespace Corex.Operation.Manager
 {
@@ -8,12 +9,13 @@ namespace Corex.Operation.Manager
        where TModel : class, IModel<TKey>, new()
 
     {
-        public IResultModel Delete(TKey id);
-        public IResultModel Delete(TModel model);
-        public IResultObjectModel<TModel> Get(TKey id);
-        public IResultObjectPagedListModel<TModel> GetList(IPagerInputModel pagerInputModel);
-        public IResultObjectModel<TModel> Insert(TModel dto);
-        public IResultObjectModel<TModel> Update(TModel dto);
-        public IResultObjectModel<TModel> SaveChanges(TModel dto);
+        ICacheSettings CacheSettings { get; set; }
+        IResultModel Delete(TKey id);
+        IResultModel Delete(TModel model);
+        IResultObjectModel<TModel> Get(TKey id);
+        IResultObjectPagedListModel<TModel> GetList(IPagerInputModel pagerInputModel);
+        IResultObjectModel<TModel> Insert(TModel dto);
+        IResultObjectModel<TModel> Update(TModel dto);
+        IResultObjectModel<TModel> SaveChanges(TModel dto);
     }
 }

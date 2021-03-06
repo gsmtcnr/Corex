@@ -6,10 +6,11 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>Sunum katmanı ile use-case ilişkisine giren ve sunum katmanının tek haberleştiği katmandır.
 Operasyon yöneticisine gelene kadar her bir sınıf tek bir görev yaparken, yönetici bu sınıfların birleştiği tek noktadır.</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Corex.Cache.Infrastructure\Corex.Cache.Infrastructure.csproj" />
     <ProjectReference Include="..\Corex.ExceptionHandling.Derived.Validation\Corex.ExceptionHandling.Derived.Validation.csproj" />
     <ProjectReference Include="..\Corex.ExceptionHandling.Manager\Corex.ExceptionHandling.Manager.csproj" />
     <ProjectReference Include="..\Corex.Mapper.Infrastructure\Corex.Mapper.Infrastructure.csproj" />

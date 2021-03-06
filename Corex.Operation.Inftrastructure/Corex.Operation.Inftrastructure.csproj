@@ -6,10 +6,11 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>Operasyon katmanının alt yapısıdır.
 Data, Validation ve OperationManager için aksiyon kurallarını belirler.</Description>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Corex.Cache.Infrastructure\Corex.Cache.Infrastructure.csproj" />
     <ProjectReference Include="..\Corex.Model.Derived.EntityModel\Corex.Model.Derived.EntityModel.csproj" />
     <ProjectReference Include="..\Corex.Validation.Infrastructure\Corex.Validation.Infrastructure.csproj" />
   </ItemGroup>

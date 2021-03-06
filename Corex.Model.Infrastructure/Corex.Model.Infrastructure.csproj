@@ -5,6 +5,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>En temel model katmanı</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

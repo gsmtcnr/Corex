@@ -1,9 +1,11 @@
-﻿using Corex.ExceptionHandling.Derived.Validation;
+﻿using Corex.Cache.Infrastructure;
+using Corex.ExceptionHandling.Derived.Validation;
 using Corex.ExceptionHandling.Infrastructure.Models;
 using Corex.Mapper.Infrastructure;
 using Corex.Model.Derived.EntityModel;
 using Corex.Model.Infrastructure;
 using Corex.Operation.Infrastructure;
+using Corex.Operation.Inftrastructure;
 using Corex.Operation.Manager.Results;
 using Corex.Validation.Infrastucture;
 using PagedList.Core;
@@ -16,17 +18,45 @@ namespace Corex.Operation.Manager
     where TEntity : class, IEntityModel<TKey>, new()
     where TModel : class, IModel<TKey>, new()
     {
+        /// <summary>
+        /// CachePrefix-Id
+        /// </summary>
+        private readonly string _cacheFormat = "{0}-{1}";
         public string TransactionId { get; }
         public IDataOperation<TEntity, TKey> DataOperation { get; protected set; }
+        public ICacheManager CacheManager { get; protected set; }
         public IMapping Mapper { get; protected set; }
+        public ICacheSettings CacheSettings { get; set; }
         public abstract IDataOperation<TEntity, TKey> SetDataOperation();
         public abstract IMapping SetMapper();
-        public BaseOperationManager(string tranactionId = null)
+        public abstract ICacheSettings SetCacheSettings();
+        public BaseOperationManager(string transactionId = null)
         {
-            this.DataOperation = SetDataOperation();
-            TransactionId = tranactionId;
-            this.Mapper = SetMapper();
+            DataOperation = SetDataOperation();
+            TransactionId = transactionId;
+            Mapper = SetMapper();
+            CacheSettings = SetCacheSettings();
+            if (IsCacheActive())
+                CacheManager = CacheSettings.CacheManager;
         }
+        #region CacheMethods
+        private bool IsCacheActive()
+        {
+            return CacheSettings != null;
+        }
+        private string CreateCacheKey(TKey key)
+        {
+            if (IsCacheActive())
+                return string.Format(_cacheFormat, CacheSettings.Prefix, key.ToString());
+            return string.Empty;
+        }
+        private string CreateCacheKey(string param)
+        {
+            if (IsCacheActive())
+                return string.Format(_cacheFormat, CacheSettings.Prefix, param);
+            return string.Empty;
+        }
+        #endregion
         #region SaveChanges
         //TKey değerinin ne olacağını Concrete nesne bilir orada karar verilmeli..
         public abstract IResultObjectModel<TModel> SaveChanges(TModel dto);
@@ -38,20 +68,32 @@ namespace Corex.Operation.Manager
             ResultObjectModel<TModel> resultObjectModel = new ResultObjectModel<TModel>();
             try
             {
+
                 InsertValidationOperation(dto);
                 TEntity entity = Mapper.Map<TModel, TEntity>(dto);
                 entity = DataOperation.Insert(entity);
                 resultObjectModel.Data = Mapper.Map<TEntity, TModel>(entity);
+                SetCacheByInsert(dto);
+
             }
             catch (System.Exception ex)
             {
                 resultObjectModel.IsSuccess = false;
                 ExceptionManager exceptionManager = new ExceptionManager(ex);
-
                 resultObjectModel.Messages.AddRange(exceptionManager.GetMessages());
             }
             resultObjectModel.SetResult();
             return resultObjectModel;
+        }
+
+        private void SetCacheByInsert(TModel dto)
+        {
+            if (IsCacheActive())
+            {
+                string cacheKey = string.Format(_cacheFormat, dto.GetType().Name.ToString(), dto.Id);
+                CacheManager.Remove<TModel>(cacheKey);
+                CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
+            }
         }
 
         private void InsertValidationOperation(TModel dto)
@@ -85,6 +127,7 @@ namespace Corex.Operation.Manager
                 TEntity entity = Mapper.Map<TModel, TEntity>(dto);
                 entity = DataOperation.Update(entity);
                 resultObjectModel.Data = Mapper.Map<TEntity, TModel>(entity);
+                SetCacheByUpdate(dto);
             }
             catch (System.Exception ex)
             {
@@ -94,6 +137,15 @@ namespace Corex.Operation.Manager
             }
             resultObjectModel.SetResult();
             return resultObjectModel;
+        }
+        private void SetCacheByUpdate(TModel dto)
+        {
+            if (IsCacheActive())
+            {
+                string cacheKey = string.Format(_cacheFormat, dto.GetType().Name.ToString(), dto.Id);
+                CacheManager.Remove<TModel>(cacheKey);
+                CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
+            }
         }
         private void UpdateValidationOperation(TModel dto)
         {
@@ -121,8 +173,8 @@ namespace Corex.Operation.Manager
             ResultObjectModel<TModel> resultObjectModel = new ResultObjectModel<TModel>();
             try
             {
-                TEntity entity = DataOperation.Get(s => s.Id.Equals(id));
-                TModel dto = Mapper.Map<TEntity, TModel>(entity);
+                TModel dto = GetByCache(id);
+                dto = GetByDb(id, dto);
                 resultObjectModel = new ResultObjectModel<TModel>(dto);
                 SetNullMessage(resultObjectModel, dto);
             }
@@ -135,24 +187,17 @@ namespace Corex.Operation.Manager
             resultObjectModel.SetResult();
             return resultObjectModel;
         }
-
-        private static void SetNullMessage(ResultObjectModel<TModel> resultObjectModel, TModel dto)
-        {
-            if (dto == null)
-                resultObjectModel.Messages.Add(new MessageItem
-                {
-                    Code = "NotFound",
-                    Message = "Data is null"
-                });
-        }
         public virtual IResultObjectPagedListModel<TModel> GetList(IPagerInputModel pagerInputModel)
         {
             ResultObjectPagedListModel<TModel> resultObjectList = new ResultObjectPagedListModel<TModel>();
             try
             {
-                IPagedList<TEntity> pagedList = DataOperation.GetPagedList<IPagerInputModel>(pagerInputModel);
+                IPagedList<TEntity> pagedList = GetListByCache(pagerInputModel);
+                pagedList = GetListByDb(pagerInputModel, pagedList);
+                SetCacheByDbList(pagerInputModel, pagedList);
                 List<TModel> dtoList = Mapper.Map<List<TEntity>, List<TModel>>(pagedList.ToList());
                 resultObjectList = new ResultObjectPagedListModel<TModel>(pagedList, dtoList);
+
             }
             catch (System.Exception ex)
             {
@@ -163,6 +208,57 @@ namespace Corex.Operation.Manager
             resultObjectList.SetResult();
             return resultObjectList;
         }
+        #region Private Methods
+        private void SetCacheByDbList(IPagerInputModel pagerInputModel, IPagedList<TEntity> pagedList)
+        {
+            if (IsCacheActive() && pagedList.Count > 0)
+                CacheManager.Set<IPagedList<TEntity>>(CreateCacheKey(pagerInputModel.ParamString()), pagedList, CacheSettings.CacheTime);
+        }
+
+        private IPagedList<TEntity> GetListByDb(IPagerInputModel pagerInputModel, IPagedList<TEntity> pagedList)
+        {
+            if (pagedList == null)
+                pagedList = DataOperation.GetPagedList<IPagerInputModel>(pagerInputModel);
+            return pagedList;
+        }
+
+        private IPagedList<TEntity> GetListByCache(IPagerInputModel pagerInputModel)
+        {
+            IPagedList<TEntity> pagedList = null;
+            if (IsCacheActive())
+                pagedList = CacheManager.Get<IPagedList<TEntity>>(CreateCacheKey(pagerInputModel.ParamString()));
+
+            return pagedList;
+        }
+        private TModel GetByDb(TKey id, TModel dto)
+        {
+            if (dto == null)
+            {
+                TEntity entity = DataOperation.Get(s => s.Id.Equals(id));
+                dto = Mapper.Map<TEntity, TModel>(entity);
+            }
+            return dto;
+        }
+        private TModel GetByCache(TKey id)
+        {
+            TModel dto = null;
+            if (IsCacheActive())
+            {
+                string cacheKey = CreateCacheKey(id);
+                dto = CacheManager.Get<TModel>(cacheKey);
+            }
+            return dto;
+        }
+        private static void SetNullMessage(ResultObjectModel<TModel> resultObjectModel, TModel dto)
+        {
+            if (dto == null)
+                resultObjectModel.Messages.Add(new MessageItem
+                {
+                    Code = "NotFound",
+                    Message = "Data is null"
+                });
+        }
+        #endregion
         #endregion
         #region Delete
         public abstract IValidationOperation<TModel> SetDeleteValidationOperation(TModel dto);
@@ -186,6 +282,7 @@ namespace Corex.Operation.Manager
                 DeleteValidationOperation(dto);
                 TEntity entity = Mapper.Map<TModel, TEntity>(dto);
                 resultModel.IsSuccess = DataOperation.Delete(entity);
+                DeleteCacheByDelete(dto, resultModel);
             }
             catch (System.Exception ex)
             {
@@ -195,6 +292,14 @@ namespace Corex.Operation.Manager
             }
             return resultModel;
         }
+        private void DeleteCacheByDelete(TModel dto, ResultModel resultModel)
+        {
+            if (IsCacheActive() && resultModel.IsSuccess)
+            {
+                CacheManager.Remove<TModel>(CreateCacheKey(dto.Id));
+            }
+        }
+
         private void DeleteValidationOperation(TModel dto)
         {
             IValidationOperation<TModel> validationOperation = SetDeleteValidationOperation(dto);
