@@ -1,6 +1,7 @@
 ﻿using Corex.Cache.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Caching;
 
 namespace Corex.Cache.Derived.Memory
@@ -13,6 +14,7 @@ namespace Corex.Cache.Derived.Memory
             Prefix = prefix;
         }
         protected static ObjectCache Cache => System.Runtime.Caching.MemoryCache.Default;
+        private static List<string> Keys = new List<string>();
         public string Prefix { get; set; }
         public string GetKey(string key)
         {
@@ -25,15 +27,16 @@ namespace Corex.Cache.Derived.Memory
         {
             return (Cache.Contains(GetKey(key)));
         }
-        public virtual bool Remove<T>(string key)
+        public virtual bool Remove(string key)
         {
             Cache.Remove(key);
+            Keys.Remove(key);
             return true;
         }
-        public virtual void Clear<T>()
+        public virtual void Clear()
         {
             foreach (var item in Cache)
-                Remove<T>(item.Key);
+                Remove(item.Key);
         }
 
         public void Dispose()
@@ -53,12 +56,22 @@ namespace Corex.Cache.Derived.Memory
         {
             if (data == null)
                 return false;
-
+            Keys.Add(key);
             CacheItemPolicy cacheItemPolicy = new CacheItemPolicy
             {
                 AbsoluteExpiration = DateTime.Now + TimeSpan.FromMinutes(cacheTime)
             };
             return Cache.Add(new CacheItem(GetKey(key), data), cacheItemPolicy);
+        }
+
+        public bool RemovePattern(string patternKey)
+        {
+            var keys = Keys.Where(s => s.StartsWith(patternKey));
+            foreach (var item in keys)
+            {
+                Remove(item);
+            }
+            return true;
         }
     }
 }

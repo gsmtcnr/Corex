@@ -11,6 +11,9 @@ namespace Corex.Cache.Infrastructure
         List<T> GetList<T>(string key);
         bool IsSet(string key);
         bool Set<T>(string key, T data, int cacheTime);
-        bool Remove<T>(string key);
+        bool Remove(string key);
+        /// <param name="patternKey">ABC-*</param>
+        bool RemovePattern(string patternKey);
+        void Clear();
     }
 }
