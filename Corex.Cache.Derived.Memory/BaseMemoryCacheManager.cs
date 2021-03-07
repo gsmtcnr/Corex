@@ -66,7 +66,7 @@ namespace Corex.Cache.Derived.Memory
 
         public bool RemovePattern(string patternKey)
         {
-            var keys = Keys.Where(s => s.StartsWith(patternKey));
+            var keys = Keys.Where(s => s.StartsWith(patternKey)).ToList();
             foreach (var item in keys)
             {
                 Remove(item);

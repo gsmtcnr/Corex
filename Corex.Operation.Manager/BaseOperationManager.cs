@@ -15,13 +15,14 @@ using System.Linq;
 namespace Corex.Operation.Manager
 {
     public abstract class BaseOperationManager<TKey, TEntity, TModel> : IOperationManager<TKey, TEntity, TModel>
-where TEntity : class, IEntityModel<TKey>, new()
-where TModel : class, IModel<TKey>, new()
+ where TEntity : class, IEntityModel<TKey>, new()
+ where TModel : class, IModel<TKey>, new()
     {
         /// <summary>
         /// CachePrefix-{Model}-{Id}
         /// </summary>
         private readonly string _cacheFormat = "{0}-{1}-{2}";
+        private readonly string _modelCacheFormat = "{0}-{1}";
         public string TransactionId { get; }
         public IDataOperation<TEntity, TKey> DataOperation { get; protected set; }
         public ICacheManager CacheManager { get; protected set; }
@@ -44,6 +45,12 @@ where TModel : class, IModel<TKey>, new()
         private bool IsCacheActive()
         {
             return CacheSettings != null;
+        }
+        private string CreateCacheKey()
+        {
+            if (IsCacheActive())
+                return string.Format(_modelCacheFormat, CacheSettings.Prefix, typeof(TModel).Name);
+            return string.Empty;
         }
         private string CreateCacheKey(TKey key)
         {
@@ -94,6 +101,7 @@ where TModel : class, IModel<TKey>, new()
 
                 string cacheKey = CreateCacheKey(dto.Id);
                 CacheManager.Remove(cacheKey);
+                CacheManager.RemovePattern(CreateCacheKey());
                 CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
             }
         }
@@ -146,6 +154,7 @@ where TModel : class, IModel<TKey>, new()
             {
                 string cacheKey = CreateCacheKey(dto.Id);
                 CacheManager.Remove(cacheKey);
+                CacheManager.RemovePattern(CreateCacheKey());
                 CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
             }
         }
@@ -196,7 +205,7 @@ where TModel : class, IModel<TKey>, new()
             {
                 IPagedList<TEntity> pagedList = GetListByCache(pagerInputModel);
                 pagedList = GetListByDb(pagerInputModel, pagedList);
-                SetCacheByDbList(pagerInputModel, pagedList);
+
                 List<TModel> dtoList = Mapper.Map<List<TEntity>, List<TModel>>(pagedList.ToList());
                 resultObjectList = new ResultObjectPagedListModel<TModel>(pagedList, dtoList);
 
@@ -220,7 +229,10 @@ where TModel : class, IModel<TKey>, new()
         private IPagedList<TEntity> GetListByDb(IPagerInputModel pagerInputModel, IPagedList<TEntity> pagedList)
         {
             if (pagedList == null)
+            {
                 pagedList = DataOperation.GetPagedList<IPagerInputModel>(pagerInputModel);
+                SetCacheByDbList(pagerInputModel, pagedList);
+            }
             return pagedList;
         }
 
@@ -301,6 +313,7 @@ where TModel : class, IModel<TKey>, new()
             if (IsCacheActive() && resultModel.IsSuccess)
             {
                 CacheManager.Remove(CreateCacheKey(dto.Id));
+                CacheManager.RemovePattern(CreateCacheKey());
             }
         }
 
