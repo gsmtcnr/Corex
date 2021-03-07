@@ -93,7 +93,7 @@ where TModel : class, IModel<TKey>, new()
             {
 
                 string cacheKey = CreateCacheKey(dto.Id);
-                CacheManager.Remove<TModel>(cacheKey);
+                CacheManager.Remove(cacheKey);
                 CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
             }
         }
@@ -145,7 +145,7 @@ where TModel : class, IModel<TKey>, new()
             if (IsCacheActive())
             {
                 string cacheKey = CreateCacheKey(dto.Id);
-                CacheManager.Remove<TModel>(cacheKey);
+                CacheManager.Remove(cacheKey);
                 CacheManager.Set<TModel>(cacheKey, dto, CacheSettings.CacheTime);
             }
         }
@@ -300,7 +300,7 @@ where TModel : class, IModel<TKey>, new()
         {
             if (IsCacheActive() && resultModel.IsSuccess)
             {
-                CacheManager.Remove<TModel>(CreateCacheKey(dto.Id));
+                CacheManager.Remove(CreateCacheKey(dto.Id));
             }
         }
 
