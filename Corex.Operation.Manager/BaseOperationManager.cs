@@ -15,8 +15,8 @@ using System.Linq;
 namespace Corex.Operation.Manager
 {
     public abstract class BaseOperationManager<TKey, TEntity, TModel> : IOperationManager<TKey, TEntity, TModel>
- where TEntity : class, IEntityModel<TKey>, new()
- where TModel : class, IModel<TKey>, new()
+         where TEntity : class, IEntityModel<TKey>, new()
+         where TModel : class, IModel<TKey>, new()
     {
         /// <summary>
         /// CachePrefix-{Model}-{Id}

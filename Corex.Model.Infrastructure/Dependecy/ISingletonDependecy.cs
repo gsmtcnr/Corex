@@ -1,6 +1,6 @@
 ﻿namespace Corex.Model.Infrastructure
 {
-    public interface ISingletonDependecy
+    public interface ISingletonDependecy : IDependency
     {
     }
 }

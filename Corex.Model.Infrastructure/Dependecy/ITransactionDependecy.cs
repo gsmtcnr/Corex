@@ -1,6 +1,6 @@
 ﻿namespace Corex.Model.Infrastructure
 {
-    public interface ITransactionDependecy
+    public interface ITransactionDependecy : IDependency
     {
     }
 }
