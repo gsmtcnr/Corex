@@ -1,4 +1,5 @@
 ﻿
+using Corex.Data.Infrastructure;
 using Corex.Model.Derived.EntityModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -12,7 +13,7 @@ namespace Corex.Data.Derived.EntityFramework
         {
             base.Map(entity);
             entity.HasKey(p => p.Id);
-            entity.Property(p => p.CreatedTime).HasDefaultValueSql("GETUTCDATE()");
+            entity.Property(p => p.CreatedTime).HasDefaultValueSql("GETUTCDATE()");//
         }
     }
 }

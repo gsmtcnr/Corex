@@ -4,15 +4,19 @@
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Samet ÇINAR</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Description>Data katmanın alt yapı katmanıdır</Description>
+    <Description>Data katmanın alt yapı katmanıdır.
+Repository &amp; Context &amp; EntityConfiguration v.b</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.5" />
     <PackageReference Include="PagedList.Core" Version="1.17.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Corex.Model.Derived.EntityModel\Corex.Model.Derived.EntityModel.csproj" />
+    <ProjectReference Include="..\Corex.Utility.Infrastructure\Corex.Utility.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

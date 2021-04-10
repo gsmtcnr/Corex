@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Corex.Data.Derived.EntityFramework
+namespace Corex.Data.Infrastructure
 {
     public abstract class BaseEntityTypeConfiguration<TEntityModel,TKey> : IEntityTypeConfiguration
          where TEntityModel : class, IEntityModel<TKey>

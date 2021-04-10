@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Corex.Data.Derived.EntityFramework
+namespace Corex.Data.Infrastructure
 {
     public abstract class BaseEntityContext : DbContext
     {
