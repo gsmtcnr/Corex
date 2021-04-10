@@ -9,6 +9,7 @@ namespace Corex.Data.Infrastructure
     {
         public virtual void Map(EntityTypeBuilder<TEntityModel> entity)
         {
+            entity.HasKey(p => p.Id);
             entity.ToTable(GetTableName(), GetSchemaName());
         }
         public virtual string GetTableName()

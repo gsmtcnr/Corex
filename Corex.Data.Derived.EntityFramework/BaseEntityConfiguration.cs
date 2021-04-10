@@ -12,7 +12,6 @@ namespace Corex.Data.Derived.EntityFramework
         public override void Map(EntityTypeBuilder<TEntityModel> entity)
         {
             base.Map(entity);
-            entity.HasKey(p => p.Id);
             entity.Property(p => p.CreatedTime).HasDefaultValueSql("GETUTCDATE()");//
         }
     }

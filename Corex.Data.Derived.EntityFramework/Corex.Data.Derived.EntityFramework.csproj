@@ -6,7 +6,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>Data katmanı alt yapısına katılım gösteren MSSQL ORM EntityFramework paketidir.
 EntityFramework &gt; MSSQLEntityFramework</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
