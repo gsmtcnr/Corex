@@ -6,6 +6,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>EntityModel ile oluşturduğumuz data katmanının transfer objelerinin bulunduğu katmandır
 Data Transfer Object</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

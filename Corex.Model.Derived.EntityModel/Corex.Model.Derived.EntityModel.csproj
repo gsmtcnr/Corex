@@ -5,6 +5,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>Data katmanının entity modellerine temel modellik eder</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
