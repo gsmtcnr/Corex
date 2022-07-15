@@ -1,202 +1,201 @@
 # Corex
-.Net5 ile geliştireceğimiz projeler içi bize alt yapı imkanı sunar. 
-Bir çok yardımcı methodlar ile projemizin bug riskini min. seviyeye indirir.
-Projeye dahil olacak geliştircilerin kolay adapte olmasını sağlar.
+It provides us with infrastructure for the projects we will develop with .Net5.
+With many helpful methods, the bug risk of our project is minimized. lowers the level.
+It enables the developers who will be involved in the project to adapt easily.
 
 
-# Utility
+# utility
 
-Reflection, WebClient, HttpWebRequest v.b yardımcı methodları kullanabilirsiniz.
+You can use Reflection, WebClient, HttpWebRequest etc. helper methods.
 
-# Model
+# pattern
 
-Projelerimizin ana model yapısıdır. Proje içerisinde kullanacağımız entity, dto modellerin hepsi "IModel"den türemelidir.
-Her projemizin uniqeidentifer değeri kendine özgü kimisinde "int" kimisinde "guid" olarak. Ya da proje özelinde tablo tablo bu değer değişebilir.
-O yüzden IModel > TKey değerini generic alır. Örn : PK olarak int kullanıyorsanız UserModel<int> yapmalısınız.
-Her method "Results"da bulunan nesnelerden geri dönüş yapmalıdır.
+It is the main model structure of our projects. All of the entity and dto models we will use in the project must derive from "IModel".
+The uniqeidentifer value of each of our projects is unique in some cases as "int" and in others as "guid". Or, this value can change from table to table, specific to the project.
+Therefore, IModel > TKey takes the value generic. Ex: If you are using int as PK, you should make UserModel<int>.
+Each method must return from the objects contained in the "Results".
 
 
 >DtoModel
 
-Data transfer objeleri için temel sınıf
+Base class for data transfer objects
 >EntityModel
 
-Entity objeleri içi temel sınıf
-# Data 
-Data katmanında repository pattern ile veri tabanı ORM yapısı kurmamıza yardımcı olur.
+Base class for Entity objects
+# data
+It helps us to set up a database ORM structure with a repository pattern in the data layer.
 >EntityFramework
 
-MSSQL veri tabanı ile ORM yapınızı kurabilirisniz.
+You can set up your ORM structure with MSSQL database.
 
 # Exception Handling
 
- Authentication, Business, Validation ve Data operasyonlarının hatalarını handle edip yakalayabileceğiniz.
-"BaseExceptionManager" miras alındığında projenizde kullanmaya hazır olacaktır.
+ You can handle and catch errors of Authentication, Business, Validation and Data operations.
+"BaseExceptionManager" will be ready to use in your project when inherited.
 
-# Validation
+# validation
 
-Özellikle sayfadan alınan Dto, InputModel v.b objelerine validasyon yapılması gerekir. Validasyon işlemlerinde bize yardımcı olacak baseclasslar buraya mevcut.
+In particular, Dto, InputModel, etc. objects taken from the page should be validated. Baseclasses that will help us in validation processes are available here.
 
-# Log
-Projemizde belirlediğimiz operayonlardan önce/sonra loglama yapacağımız ortamın yapısını kurmamıza yardımcı olur.
+# log
+It helps us to establish the structure of the environment where we will log before/after the operations we have determined in our project.
 
 > AzureTableStorage
 
- Azure Table Storage üzerinde kaynağınız varsa connectionString belirterek loglamak istediğiniz datayı "IAzureLogData" haline getirip loglama işleminizi yapabilirsiniz.
+ If you have a resource on Azure Table Storage, you can specify the connectionString and make the data you want to log as "IAzureLogData" and do your logging.
  
 > MSSQL
 
- SQL'de loglama işleminde oluşturduğunuz tabloya log atmak için "BaseSQLLogger" da "CreateCommand" methodu ile ilgili SqlCommand'ını vermeniz beklenecektir. 
-Sizin için connection nesnesini kendisi oluşturup execute edecektir.
+ In order to log the table you created in the logging process in SQL, you will be expected to provide the SqlCommand related to the "CreateCommand" method in the "BaseSQLLogger".
+It will create and execute the connection object for you.
 
-# Mapper
+# mapper
 
- Entity katmanı ile Dto katmanı arasında nesnelerimiz genellikle aynı değerleri barındırır. Bu değerleri birbirine maplemek için kullanırız.
+ Between the Entity layer and the Dto layer, our objects usually contain the same values. We use these values ​​to map them together.
  >Mapsterx
  
- BaseMapster'ı miras alarak oluşturacağınız somut nesne işlemlerimizi yapmaya yardımcı olacaktır.
+ It will help to handle our concrete object that you will create by inheriting BaseMapster.
  >AutoMapperx
  
- Çok yakında..
+ Very soon..
 
 # Serializer
-ExpressionSerializer, JsonSerializer işlemleriniz için base class sağlar.
+ExpressionSerializer provides base class for your JsonSerializer operations.
 # >Serializer.JsonSerializer
 >NSoft
  
- NewtownSoft kütüphanesini kullanarak serialize, deserialize işlemlerimlerinizi yapar.
+ It performs serialize and deserialize operations using the NewtownSoft library.
 
->SJson
+>SJlast
 
- Thirdparty bir kütüphane kullanmak yerine system.text.json kullanmak istiyorum derseniz tercih edebilirsiniz.
+ If you want to use system.text.json instead of using a third-party library, you can choose it.
 
 # >Serializer.ExpressionSerializer
  >SLinq
  
- Linq kullanarak yazdığımız expressionları örn : "s=>s.Id==12" gibi serialize etme konusunda standart json serialier kütüphaneleri bize yardımcı olamaz. Bu yüzden "SLinq" ile linq sorgularılarınızı serialize edebilirsiniz.
+ Standard json serialier libraries cannot help us to serialize expressions we write using Linq, such as "s=>s.Id==12". That's why you can serialize your linq queries with "SLinq".
  
 # Template Render
 
- Dinamik string değerler oluşturmak istediğimiz operasyonlar bize render alt yapısını sağlamakta yardımcı olacaktır.
+ The operations we want to create dynamic string values ​​will help us to provide the rendering infrastructure.
  
 > HBars
  
- HandleBarsDotNet kütüphanesini kullanılır. Kullanım için "BaseHandleBarsRender" miras almanız yeterli olacaktır.
+ Used the HandleBarsDotNet library. You'll just need to inherit "BaseHandleBarsRender" for use.
  
-# Push Sender
+# Push Senders
   
-Mobil cihazların unique değerleri vardır. Bu değerlere bildirim göndermek istediğimiz operasyonlar için bize alt yapısını sağlamakta yardımcı olacaktır.
-	
+Mobile devices have unique values. Sending notifications to these values ​​will help us provide the infrastructure for the operations we want.
+
 > OneSignal
 
-  OneSignal kütüphanesini kullanılır. Kullanım için "BaseOneSignalPushSender" miras aldığınızda "ApiKey,ApiId,ApiUrl" bilgilerini vermeniz yeterli olacaktır.
-	
-# Sms Sender
+  It uses the OneSignal library. When you inherit "BaseOneSignalPushSender" for use, it will be sufficient to provide "ApiKey,ApiId,ApiUrl" information.
+
+# SMS Sender
    
-Sms gönderimi yapmamız gereken operasyonlar için bize alt yapısını sağlamakta yardımcı olacaktır.
-	
+Sending sms will help us to provide the infrastructure for the operations we need to do.
+
 > PostaGuverici
-	
-Türkiye'de Posta Güvercini çok yaygın kullanılan bir SMS servisidir. Posta Guverci hesabınız varsa eğer "BasePostaGuverciniSmsSender" miras alarak userName,password ve url bilgilerini set etmeniz halinde kullanıma hazır olacaktır.
-	
+
+Posta Güvercini is a very widely used SMS service in Turkey. If you have a Posta Guverci account, it will be ready to use if you inherit "BasePostaGuverciniSmsSender" and set the userName,password and url information.
+
 # Email Sender
   
 > SendGrid
 
- Azure SendGrid kütüphanesini kullanılır. Azure SendGrid hesap bilgilerinizi "BaseSendGridEmailSender" miras aldıktan sonra belirtmeniz halinde kullanıma hazır olacaktır.
+ Azure SendGrid library is used. It will be available if you specify your Azure SendGrid account information after inheriting "BaseSendGridEmailSender".
  
 > Smtp
 
-System.Net.Mail kullanarak mail gönderimi sağlar. Bilgilerinizi "BaseSMTPEmailSender" miras aldıktan belirtmeniz halinde kullanıma hazır olacaktır.
+It allows sending mail using System.Net.Mail. It will be ready to use if you specify your information after inheriting "BaseSMTPEmailSender".
 
 # Cloud File
   
-Dosyalarınızı cloud upload yapmanızı sağlayacak bir alt yapıdır.
-
+It is an infrastructure that will allow you to upload your files to the cloud.
 > AzureBlobStorage
 
-Azure Blob Storage hesabınızın connectionString bilgisini set ederek basitçe kullancabileceğiniz bir yapıdadır. "BaseAzureBlobStorage" miras almanız yeterli olacaktır.
+It is a structure that you can use simply by setting the connectionString information of your Azure Blob Storage account. You should just inherit "BaseAzureBlobStorage".
 
 # PDF Converter
 
-HTML formatında olan sayfalarımızı PDF'e çevirmemizi sağlayacak bir alt yapıdır.
+It is an infrastructure that will enable us to convert our HTML-formatted pages to PDF.
 
 > DinkToPDFConverter
   
-DinkToPDF kütüphanesini kullanılır. Oluşturulan PDF'in cloud üzerinde kayıt edilebilmesi için "BaseCloudDinkToPDFConverter" miras almanız gerekmektedir.
-Sizden "IUploadAsync" vermenizi talep edecek, sizde bu methodu override ederken cloudFile yaptığınız somut nesneyi vereceksiniz.
+Used the DinkToPDF library. You need to inherit "BaseCloudDinkToPDFConverter" so that the created PDF can be saved on the cloud.
+It will ask you to give "IUploadAsync", and you will give the concrete object that you made cloudFile while overriding this method.
 
-Fiziksel bir dosya yoluna kayıt etmek isterseniz eğer "BasePhysicalDinkToPDFConverter" miras almanız size yeterli olacaktır.
+If you want to save to a physical file path, inheriting "BasePhysicalDinkToPDFConverter" will suffice.
 
 > SelectPDFConverter
 
-SelectPDF kütüphanesini kullanılır. Oluşturulan PDF'in cloud üzerinde kayıt edilebilmesi için "BaseCloudSelectPDFConverter" miras almanız gerekmektedir.
-Sizden "IUploadAsync" vermenizi talep edecek, sizde bu methodu override ederken cloudFile yaptığınız somut nesneyi vereceksiniz.
+Used the SelectPDF library. You need to inherit "BaseCloudSelectPDFConverter" so that the created PDF can be saved on the cloud.
+It will ask you to give "IUploadAsync", and you will give the concrete object that you made cloudFile while overriding this method.
 
-Fiziksel bir dosya yoluna kayıt etmek isterseniz eğer "BasePhysicalSelectPDFConverter" miras almanız size yeterli olacaktır.
+If you want to save to a physical file path, inheriting "BasePhysicalSelectPDFConverter" will suffice.
 
 # Encryption
-Url, kullanıcı şifresi v.b değerleri şifreleme alt yapısıdır.
+Url, user password, etc. values ​​are encryption infrastructure.
 
 # > Encryption.Cipher
-Şifreleme işlemi yaparken bir string değişken kulanırız. Ancak bununla beraber "X" değeri ile şifrele dediğimizde bizim için daha güvenilir bir şifrelme olacaktır.
+We use a string variable when doing encryption. However, when we say encrypt with the value "X", it will be a more reliable encryption for us.
 
 > SHA256
 
-"BaseSHA256CipherEncryption" miras almanız Decrypt,Encrypt methodlarını kullanmanıza yeterli olacaktır.
+Inheriting "BaseSHA256CipherEncryption" will be enough to use Decrypt,Encrypt methods.
 
-# Cache
+# cache
 
-Datalarımıza belirli durumlarda sürekli ana veri tabanına gitmeden ulaşmak isteriz. Bu projemize bir çok fayda sağlayacaktır. 
-Not : Cacheleme sırasında her cacheKey'in önüne bir değer belirlemek isterseniz. Prefix property kullanabilirsiniz.
+In certain situations, we want to access our data without constantly going to the main database. This will bring many benefits to our project.
+Note: If you want to set a value in front of each cacheKey during caching. You can use prefix property.
 > Memory
 
-"BaseMemoryCacheManager" miras aldığınızda uygulamanızın çalıştığı sunucunun RAM'ini kullanarak datalarınızı ön bellekte tutar.
+When you inherit the "BaseMemoryCacheManager", it caches your data using the RAM of the server where your application is running.
 
 > Redis
 
-"BaseRedisCacheManager" miras aldığınızda belirteceğiniz connectionString ile Redis sunucunuza bağlanarak datalarınızı Redis üzerinde tutar.
+"BaseRedisCacheManager" keeps your data on Redis by connecting to your Redis server with the connectionString you specify when you inherit.
 
-# Document DB
+# DocumentDB
 
-Projemizin datasını saklamak için bir çok teknoloji mevcut. DocumentDB'ler de bunların en performanslı olanları diyebiliriz.
+There are many technologies available to store the data of our project. We can say that DocumentDBs are the most performing ones.
 
 > DocumentDB.MongoDB.V1
-  MongoDB kendi alt yapısı olan ve kendi içerisinde aynı bir mimarisi olan yapı. Bu v1 sürümüdür.
+  MongoDB is a structure with its own infrastructure and an architecture within itself. This is v1 version.
 
 # Operation
 
-Operasyonlarımız her bir işi bütünüyle üstülenecek takımlardır. BusinessOperation, DataOperation, ValidationOperation ve bunların yöneticisi Operation.Manager.
+Our operations are teams that will take on every single job completely. BusinessOperation, DataOperation, ValidationOperation and their manager Operation.Manager.
 
-> Business Operation
+> Business Operations
 
-Hesaplama v.b işlemler yapacağımız businessOperation katmanı için "BaseBusinessOperation" miras almalıyız. 
+We should inherit "BaseBusinessOperation" for the businessOperation layer where we will perform calculations etc.
 
 > Data Operation
 
-Data Repository katmanı ile konuşacak ve datayı operation.manager'a getirecek katman için "BaseDataOperation" miras almalıyız. Kullanacağımız entity, repository, key değerlerini generic olarak vermeliyiz.
+We should inherit "BaseDataOperation" for the layer that will talk to the Data Repository layer and bring the data to operation.manager. We should give the entity, repository, key values ​​we will use as generic.
 
 > Validation Operation
 
-Validation katmanında bulunan her bir nesne için yapılmış validationların listesini çıkartıp operation.manager'a ileten operasyon katmanıdır. "BaseValidationOperation" miras alınarak validation listesi toplanacak model generic olarak set edilir.
+It is the operation layer that extracts the list of validations made for each object in the validation layer and forwards it to operation.manager. By inheriting "BaseValidationOperation", the model whose validation list will be collected is set as generic.
 
 > Operation Manager
 
-Tüm operasyonların toplandığı tek katmandır. ApplicationLayer ile use-case ilişkisi kuran tek katmandır. 
-İçerisinde somut bir ExceptionManager ve her bir nesneye hizmet edebilecek "BaseOperationManager" bulunur.
-BaseOperationManager'a TKey,TEntity,TModel yani <int,UserEntity,UserModel> verildiğinde size tüm CRUD operasyonlarını sunar.
-Get, GetList, Insert, Update, Delete v.b
+It is the only layer where all operations are gathered. It is the only layer that establishes a use-case relationship with ApplicationLayer.
+It contains a concrete ExceptionManager and a "BaseOperationManager" that can serve each object.
+It presents you all CRUD operations when BaseOperationManager is given TKey,TEntity,TModel ie <int,UserEntity,UserModel>.
+Get, GetList, Insert, Update, Delete etc.
 
-# Prensetation
- Sunum katmanı için alt yapı sağlar. BaseStartup ile settings yönetimine yardımcı olur.
+# Princess
+ It provides the infrastructure for the presentation layer. It helps to manage settings with BaseStartup.
  
 > MVC
 
-MVC projelerinde kullanılan özellikleri barındır. Session kullanmak isterseniz "UseSession:true", Authentication ayarlarını otomatik yapılmasını istiyorsanız "UseAuthentication:true" olarak belirleyebilirsiniz.
+Host features used in MVC projects. You can set "UseSession:true" if you want to use Session, and "UseAuthentication:true" if you want the Authentication settings to be made automatically.
 
 > API
 
-Çok yakında..
+Very soon..
  
 
 
