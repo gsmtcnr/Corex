@@ -19,5 +19,6 @@ namespace Corex.Presentation.Infrastructure
                 .AddJsonFile($"appsettings.{environmentName}.json", true, true);
             return builder;
         }
+
     }
 }
