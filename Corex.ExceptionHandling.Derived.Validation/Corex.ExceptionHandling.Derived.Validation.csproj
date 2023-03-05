@@ -5,6 +5,7 @@
     <Authors>Samet ÇINAR</Authors>
     <Description>Exception Handling "Validation" hatalarını handle katmandır.</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
