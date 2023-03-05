@@ -3,13 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Authors>Samet ÇINAR</Authors>
-    <Description>Data katmanının entity modellerine temel modellik eder</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Corex.Model.Infrastructure\Corex.Model.Infrastructure.csproj" />
+    <PackageReference Include="Handlebars.Net" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corex.TemplateRender.Infrastructure\Corex.TemplateRender.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

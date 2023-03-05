@@ -4,15 +4,11 @@
     <TargetFramework>net7.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Samet ÇINAR</Authors>
-    <Version>1.0.1</Version>
+    <Description>Sunum katmanının alt yapısıdır.</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Corex.Model.Infrastructure\Corex.Model.Infrastructure.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

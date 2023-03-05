@@ -4,11 +4,10 @@
     <TargetFramework>net7.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Samet ÇINAR</Authors>
-    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OneSignal.RestAPIv3.Client" Version="1.2.0" />
+    <PackageReference Include="OneSignal.RestAPIv3.Client" Version="1.1.3" />
   </ItemGroup>
 
   <ItemGroup>
