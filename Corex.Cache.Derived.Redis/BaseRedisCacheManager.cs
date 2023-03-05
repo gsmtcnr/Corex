@@ -35,7 +35,7 @@ namespace Corex.Cache.Derived.Redis
             string returnValue = string.Format(format, Prefix, key);
             return returnValue;
         }
-        public string Prefix { get; set; }
+        public virtual string Prefix { get; set; }
         public void Dispose()
         {
             Redis.Dispose();
