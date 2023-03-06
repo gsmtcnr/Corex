@@ -1,6 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Net;
 using System.Text;
+
 namespace Corex.Utility.Infrastructure
 {
     public class WebClientUploadValues
