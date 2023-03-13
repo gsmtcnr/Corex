@@ -48,11 +48,11 @@ namespace Corex.Cache.Derived.Redis
         }
         public bool IsSet(string key)
         {
-            return RedisDB.KeyExists(key);
+            return RedisDB.KeyExists(GetKey(key));
         }
         public bool Remove(string key)
         {
-            return RedisDB.KeyDelete(key);
+            return RedisDB.KeyDelete(GetKey(key));
             //T value = Get<T>(key);
             //var serializedValue = JsonSerializer.Serialize<T>(value);
             //var response = db.SetRemove(GetKey(key), serializedValue);

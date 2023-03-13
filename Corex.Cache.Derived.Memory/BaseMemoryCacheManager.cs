@@ -29,8 +29,8 @@ namespace Corex.Cache.Derived.Memory
         }
         public virtual bool Remove(string key)
         {
-            Cache.Remove(key);
-            Keys.Remove(key);
+            Cache.Remove(GetKey(key));
+            Keys.Remove(GetKey(key));
             return true;
         }
         public virtual void Clear()
