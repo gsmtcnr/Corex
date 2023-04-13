@@ -177,7 +177,7 @@ namespace Corex.Utility.Infrastructure
             if (string.IsNullOrEmpty(incomingText))
                 incomingText = string.Empty;
 
-            incomingText = String.Join("", incomingText.Normalize(NormalizationForm.FormD)
+            incomingText = string.Join("", incomingText.Normalize(NormalizationForm.FormD)
                     .Where(c => char.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark));
 
             incomingText = incomingText.Trim();
@@ -222,6 +222,20 @@ namespace Corex.Utility.Infrastructure
 
             incomingText = incomingText.Trim();
             return incomingText;
+        }
+        
+        /// <summary>
+        /// Converts given text to Guid
+        /// Returns Guid.Empty if not applicable
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static Guid ToGuid(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return Guid.Empty;
+
+            return Guid.Parse(text);
         }
     }
 }
