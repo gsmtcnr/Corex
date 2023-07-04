@@ -2,6 +2,7 @@
 It provides us with infrastructure for the projects we will develop with .Net5.
 With many helpful methods, the bug risk of our project is minimized. lowers the level.
 It enables the developers who will be involved in the project to adapt easily.
+Discord channel : https://discord.gg/S9YqgTpA
 
 
 # utility
